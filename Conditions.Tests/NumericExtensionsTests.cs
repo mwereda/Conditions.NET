@@ -94,5 +94,32 @@ namespace Conditions.Tests
         {
             Assert.True(value.IsGreaterOrEqual(givenValue));
         }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(1, 23)]
+        [InlineData(22, 23)]
+        public void IsLowerThan_IntValueLowerThanGivenValue_ReturnsTrue(int value, int givenValue)
+        {
+            Assert.True(value.IsLowerThan(givenValue));
+        }
+
+        [Theory]
+        [InlineData(3, 2)]
+        [InlineData(31, 23)]
+        [InlineData(24, 23)]
+        public void IsLowerOrEqual_IntValueGreaterThanGivenValue_ReturnsFalse(int value, int givenValue)
+        {
+            Assert.False(value.IsLowerOrEqual(givenValue));
+        }
+
+        [Theory]
+        [InlineData(2, 2)]
+        [InlineData(23, 23)]
+        [InlineData(233, 233)]
+        public void IsLowerOrEqual_IntValueEqualsGivenValue_ReturnsTrue(int value, int givenValue)
+        {
+            Assert.True(value.IsLowerOrEqual(givenValue));
+        }
     }
 }

@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoolExtensionsTests.cs" />
+    <Compile Include="DateTimeExtensionsTests.cs" />
     <Compile Include="NumericExtensionsTests.cs" />
     <Compile Include="StringExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

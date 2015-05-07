@@ -121,5 +121,35 @@ namespace Conditions.Tests
         {
             Assert.True(value.IsLowerOrEqual(givenValue));
         }
+
+        [Theory]
+        [InlineData(2, 2, 3)]
+        [InlineData(12, 2, 23)]
+        [InlineData(12, 2, 12)]
+        [InlineData(20, 2, 300)]
+        public void IsBetween_ValueBetweenGivenRange_ReturnsTrue(int value, int minValue, int maxValue)
+        {
+            Assert.True(value.IsBetween(minValue, maxValue));
+        }
+
+        [Theory]
+        [InlineData(23, 2, 3)]
+        [InlineData(12, 13, 23)]
+        public void IsBetween_ValueIsNotBetweenGivenRange_ReturnsFalse(int value, int minValue, int maxValue)
+        {
+            Assert.False(value.IsBetween(minValue, maxValue));
+        }
+
+        [Theory]
+        [InlineData(2.0, 2.0, 3.0)]
+        [InlineData(12.0, 2.4, 23.5)]
+        [InlineData(12.5, 2.9, 12.5)]
+        [InlineData(20.2, 2.0, 300.3)]
+        [InlineData(2.71, 2.7, 3.0)]
+        [InlineData(2.99, 2.0, 3.0)]
+        public void IsBetween_DecimalValueBetweenGivenRange_ReturnsTrue(decimal value, decimal minValue, decimal maxValue)
+        {
+            Assert.True(value.IsBetween(minValue, maxValue));
+        }
     }
 }

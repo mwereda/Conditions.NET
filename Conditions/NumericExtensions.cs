@@ -47,5 +47,16 @@ namespace Conditions
         {
             return value.CompareTo(givenValue).Equals(Lower) || value.CompareTo(givenValue).Equals(Equal);
         }
+
+        /// <summary>
+        /// Checks if value is between given range.
+        /// </summary>                
+        /// <param name="minValue">Minimal value.</param>
+        /// <param name="maxValue">Maximal value.</param>
+        /// <returns>Boolean value whether variable is between given range.</returns>
+        public static bool IsBetween<T>(this T value, T minValue, T maxValue) where T : struct, IComparable<T>
+        {
+            return value.IsGreaterOrEqual(minValue) && value.IsLowerOrEqual(maxValue);
+        }
     }
 }

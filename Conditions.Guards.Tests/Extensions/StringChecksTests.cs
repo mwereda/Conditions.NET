@@ -1,5 +1,4 @@
 ﻿using System;
-using Conditions.Guards.Extensions;
 using Xunit;
 
 namespace Conditions.Guards.Tests.Extensions

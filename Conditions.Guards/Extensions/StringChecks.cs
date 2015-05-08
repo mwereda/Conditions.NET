@@ -49,5 +49,19 @@ namespace Conditions.Guards.Extensions
                     string.Format("String doesn't have expected length ({0} chars)", expectedLength), ifObject.ParamName);
             }
         }
+
+        /// <summary>
+        /// Guards against string that's length is shorter than given length.
+        /// </summary>       
+        /// <param name="minimalLength">Minimal acceptable length.</param>
+        public static void HasLengthAtLeast(this If<string> ifObject, int minimalLength)
+        {
+            if (!ifObject.Value.HasLengthAtLeast(minimalLength))
+            {
+                throw new ArgumentException(
+                    string.Format("String is too short. Expected length is {0} or longer.", minimalLength),
+                    ifObject.ParamName);
+            }
+        }
     }
 }

@@ -38,5 +38,14 @@ namespace Conditions.Guards.Tests.Extensions
 
             Assert.Throws<ArgumentException>(() => Check.If(sampleString).HasLength(expectedLength));
         }
+
+        [Fact]
+        public void HasLengthAtLeast_StringShorterThanExpected_ThrowsArgumentException()
+        {
+            const string sampleString = "testing";
+            const int minimalLength = 10;
+
+            Assert.Throws<ArgumentException>(() => Check.If(sampleString).HasLengthAtLeast(minimalLength));
+        }
     }
 }

@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Extensions\DateTimeChecksTests.cs" />
     <Compile Include="Extensions\NumericChecksTests.cs" />
+    <Compile Include="Extensions\ObjectChecksTests.cs" />
     <Compile Include="Extensions\StringChecksTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

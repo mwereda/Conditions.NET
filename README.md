@@ -1,14 +1,14 @@
 # Conditions.NET
 
 This is library that provides condition methods, thanks to which code we are writing is more verbose and clean.
-Currently it provides conditions for strings, numerics, booleans and datatime.
+Currently it provides conditions for objects, strings, numerics, booleans and datatime.
 
 NuGet:
 
 # Conditions.Guards.NET
 
 This library provides guard clauses that could be used to guard against not expected values.
-It provides conditions for strings, numerics and datatime.
+It provides conditions for objects, strings, numerics and datatime.
 
 NuGet:
 

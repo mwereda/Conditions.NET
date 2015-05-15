@@ -3,6 +3,39 @@
 This is library that provides condition methods, thanks to which code we are writing is more verbose and clean.
 Currently it provides conditions for objects, strings, numerics, booleans and datatime.
 
+Available conditions:
+1. Object
+  ```
+  IsNull
+  IsNotNull
+  ```
+2. String:
+  ```
+  IsNullOrEmpty
+  IsNotNullOrEmpty
+  IsGuid
+  IsEmailAddress
+  HasLength
+  HasLengthAtLeast
+  ```
+3. Numerics:
+  ```
+  IsGreaterThan
+  IsGreaterOrEqual
+  IsLowerThan
+  IsLowerOrEqual
+  IsBetween
+  ```
+4. DateTime:
+  ```
+  IsGreaterThan
+  ```
+5. Boolean:
+  ```
+  IsTrue
+  IsFalse
+  ```
+
 NuGet: https://www.nuget.org/packages/Conditions.NET
 
 # Conditions.Guards.NET

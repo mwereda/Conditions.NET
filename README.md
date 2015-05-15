@@ -3,7 +3,8 @@
 This is library that provides condition methods, thanks to which code we are writing is more verbose and clean.
 Currently it provides conditions for objects, strings, numerics, booleans and datatime.
 
-Available conditions:
+*Available conditions:*
+
 Object:
   ```
   IsNull

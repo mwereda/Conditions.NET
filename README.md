@@ -4,12 +4,12 @@ This is library that provides condition methods, thanks to which code we are wri
 Currently it provides conditions for objects, strings, numerics, booleans and datatime.
 
 Available conditions:
-1. Object
+Object:
   ```
   IsNull
   IsNotNull
   ```
-2. String:
+String:
   ```
   IsNullOrEmpty
   IsNotNullOrEmpty
@@ -18,7 +18,7 @@ Available conditions:
   HasLength
   HasLengthAtLeast
   ```
-3. Numerics:
+Numerics:
   ```
   IsGreaterThan
   IsGreaterOrEqual
@@ -26,11 +26,11 @@ Available conditions:
   IsLowerOrEqual
   IsBetween
   ```
-4. DateTime:
+DateTime:
   ```
   IsGreaterThan
   ```
-5. Boolean:
+Boolean:
   ```
   IsTrue
   IsFalse

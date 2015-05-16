@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace Conditions.Guards.Extensions
+// ReSharper disable once CheckNamespace
+namespace Conditions.Guards
 {
 	public static class DateTimeChecks
 	{

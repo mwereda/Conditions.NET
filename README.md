@@ -39,7 +39,7 @@ Boolean:
 
 NuGet: https://www.nuget.org/packages/Conditions.NET
 
-# Conditions.Guards.NET
+# Guards.NET
 
 This library provides guard clauses that could be used to guard against not expected values.
 It provides conditions for objects, strings, numerics and datatime.
@@ -72,7 +72,7 @@ DateTime:
   Check.If(date).IsGreaterThan(referenceDate)
   ```
   
-NuGet:
+NuGet: https://www.nuget.org/packages/Guards.NET
 
 # Contributions
 

@@ -1,2 +1,3 @@
 Version 1.0.1 [not released yet]
-- removed 'Extensions' part from namespace for ObjectChecks and DateTimeChecks
+* removed 'Extensions' part from namespace for ObjectChecks and DateTimeChecks
++ it's possible to set parameter's name that's used when creating exception

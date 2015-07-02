@@ -6,15 +6,16 @@
         private string paramName;
 
         internal If(T value)
-        {			
+        {
             this.value = value;
-	        this.paramName = string.Empty;
+            this.paramName = string.Empty;
         }
 
-		internal If(T value, string paramName) : this(value)
-		{
-			this.paramName = paramName;
-		}
+        internal If(T value, string paramName)
+            : this(value)
+        {
+            this.paramName = paramName;
+        }
 
         internal T Value
         {

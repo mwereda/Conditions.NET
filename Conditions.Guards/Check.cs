@@ -7,9 +7,9 @@
             return new If<T>(@object);
         }
 
-		public static If<T> If<T>(T @object, string paramName)
-		{
-			return new If<T>(@object, paramName);
-		}
+        public static If<T> If<T>(T @object, string paramName)
+        {
+            return new If<T>(@object, paramName);
+        }
     }
 }

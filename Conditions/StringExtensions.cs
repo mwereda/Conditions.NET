@@ -76,5 +76,15 @@ namespace Conditions
         {
             return @string.Length.IsGreaterOrEqual(minimalLength);
         }
+
+        /// <summary>
+        /// Checks if string matches pattern (RegEx)
+        /// </summary>        
+        /// <param name="pattern">Regular expression pattern.</param>
+        /// <returns>Boolean value whether string matches given pattern</returns>
+        public static bool Matches(this String @string, string pattern)
+        {
+            return Regex.IsMatch(@string, pattern);
+        }
     }
 }

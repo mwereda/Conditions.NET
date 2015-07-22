@@ -124,5 +124,21 @@ namespace Conditions.Tests
         {
             Assert.False(@string.HasLengthAtLeast(minimalLength));
         }
+
+        [Theory]
+        [InlineData("123", @"\d{3}")]
+        [InlineData("abc123", @"[a-z]{3}\d{3}")]
+        public void Matches_StringMatchesPattern_ReturnsTrue(string @string, string pattern)
+        {
+            Assert.True(@string.Matches(pattern));
+        }
+
+        [Theory]
+        [InlineData("123", @"^\d$")]
+        [InlineData("abc123", @"}\d{3}")]
+        public void Matches_StringDoesNotMatchPattern_ReturnsFalse(string @string, string pattern)
+        {
+            Assert.False(@string.Matches(pattern));
+        }
     }
 }

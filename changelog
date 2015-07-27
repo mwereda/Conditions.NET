@@ -1,6 +1,7 @@
 [Conditions.NET]
-Version 1.0.1 [not released yet]
+Version 1.1.0 [not released yet]
 + Matches condition - checks whether given string matches Regex pattern.
++ Enumeration conditions - HasExectlyOneItem, HasAtLeastOneItem, HasMoreThanOneItem, HasItemsCount
 
 [Guards.NET]
 Version 1.0.2 [02/07/2015]

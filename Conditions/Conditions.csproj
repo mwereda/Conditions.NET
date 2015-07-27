@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BoolExtensions.cs" />
     <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="NumericExtensions.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

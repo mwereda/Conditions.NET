@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="BoolExtensionsTests.cs" />
     <Compile Include="DateTimeExtensionsTests.cs" />
+    <Compile Include="DummyClass.cs" />
+    <Compile Include="EnumerableExtensionsTests.cs" />
     <Compile Include="NumericExtensionsTests.cs" />
     <Compile Include="ObjectExtensionsTests.cs" />
     <Compile Include="StringExtensionsTests.cs" />

@@ -50,5 +50,25 @@ namespace Conditions
         {
             return collection.Count().Equals(count);
         }
+
+        /// <summary>
+        /// Checks if collection (IEnumerable) has at least given number of items.
+        /// </summary>        
+        /// <param name="count">Items count.</param>
+        /// <returns>Boolean value whether collection has at least given number of items.</returns>
+        public static bool HasItemsCountAtLeast<T>(this IEnumerable<T> collection, int count)
+        {
+            return collection.Count() >= count;
+        }
+
+        /// <summary>
+        /// Checks if collection (IEnumerable) has more items than given number.
+        /// </summary>        
+        /// <param name="count">Items count.</param>
+        /// <returns>Boolean value whether collection has more items than given number.</returns>
+        public static bool HasMoreItemsThan<T>(this IEnumerable<T> collection, int count)
+        {
+            return collection.Count() > count;
+        }
     }
 }

@@ -173,5 +173,61 @@ namespace Conditions.Tests
 
             Assert.False(list.HasItemsCount(14));
         }
+
+        [Fact]
+        public void HasItemsCountAtLeast_OneItemExpectedNumber_ReturnsTrue()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Assert.True(list.HasItemsCountAtLeast(1));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeast_OneItemUnexpectedNumber_ReturnsFalse()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Assert.False(list.HasItemsCountAtLeast(2));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeast_ThreeItemsExpectedNumber_ReturnsTrue()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
+
+            Assert.True(list.HasItemsCountAtLeast(2));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeast_ThreeItemsUnexpectedNumber_ReturnsFalse()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
+
+            Assert.False(list.HasItemsCountAtLeast(4));
+        }
+
+        [Fact]
+        public void HasMoreItemsThan_TwoItemsListExpectedMoreThanOneItem_ReturnsTrue()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.True(list.HasMoreItemsThan(1));
+        }
+
+        [Fact]
+        public void HasMoreItemsThan_TwoItemsListExpectedMoreThanTwoItem_ReturnsFalse()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.False(list.HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThan_ThreeItemsListExpectedMoreThanFiveItem_ReturnsFalse()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
+
+            Assert.False(list.HasMoreItemsThan(5));
+        }
     }
 }

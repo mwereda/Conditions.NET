@@ -7,6 +7,22 @@ namespace Conditions.Tests
     public class EnumerableExtensionsTests
     {
         [Fact]
+        public void IsEmpty_EmptyList_ReturnsTrue()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.True(list.IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmpty_NotEmptyList_ReturnsTFalse()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Assert.False(list.IsEmpty());
+        }
+
+        [Fact]
         public void HasExactlyOneItem_OneItemList_ReturnsTrue()
         {
             var list = new List<DummyClass> { new DummyClass() };

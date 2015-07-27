@@ -6,6 +6,15 @@ namespace Conditions
     public static class EnumerableExtensions
     {
         /// <summary>
+        /// Checks if collection (IEnumerable) is empty.
+        /// </summary>        
+        /// <returns>Boolean value whether collection is empty.</returns>
+        public static bool IsEmpty<T>(this IEnumerable<T> collection)
+        {
+            return collection.Count() == 0;
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) has only one item.
         /// </summary>        
         /// <returns>Boolean value whether collection has only one item.</returns>

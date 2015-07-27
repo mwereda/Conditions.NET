@@ -18,6 +18,7 @@ String:
   IsEmailAddress
   HasLength
   HasLengthAtLeast
+  Matches
   ```
 Numerics:
   ```

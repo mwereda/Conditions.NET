@@ -37,7 +37,16 @@ Boolean:
   IsTrue
   IsFalse
   ```
-
+Enumerables:
+  ```
+  IsEmpty
+  HasExactlyOneItem
+  HasMoreThanOneItem
+  HasAtLeastOneItem
+  HasItemsCount
+  HasItemsCountAtLeast
+  HasMoreItemsThan
+  ```
 NuGet: https://www.nuget.org/packages/Conditions.NET
 
 # Guards.NET

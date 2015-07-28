@@ -197,5 +197,37 @@ namespace Conditions.Guards.Tests.Extensions
 
             Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
+
+        [Fact]
+        public void HasAtLeastOneItemList_EmptyCollection_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemIList_EmptyCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemIEnumerable_EmptyCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemICollection_EmptyCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+        }
     }
 }

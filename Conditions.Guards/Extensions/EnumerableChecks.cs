@@ -181,5 +181,49 @@ namespace Conditions.Guards
                 throw new ArgumentException(ifObject.ParamName);
             }
         }
+
+        /// <summary>
+        /// Guards against collections that don't have at least one item.
+        /// </summary> 
+        public static void HasAtLeastOneItem<T>(this If<List<T>> ifObject)
+        {
+            if (!ifObject.Value.HasAtLeastOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have at least one item.
+        /// </summary> 
+        public static void HasAtLeastOneItem<T>(this If<IList<T>> ifObject)
+        {
+            if (!ifObject.Value.HasAtLeastOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have at least one item.
+        /// </summary> 
+        public static void HasAtLeastOneItem<T>(this If<IEnumerable<T>> ifObject)
+        {
+            if (!ifObject.Value.HasAtLeastOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have at least one item.
+        /// </summary> 
+        public static void HasAtLeastOneItem<T>(this If<ICollection<T>> ifObject)
+        {
+            if (!ifObject.Value.HasAtLeastOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
     }
 }

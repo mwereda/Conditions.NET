@@ -321,5 +321,53 @@ namespace Conditions.Guards
                 throw new ArgumentException(ifObject.ParamName);
             }
         }
+
+        /// <summary>
+        /// Guards against collections that don't have more items than given number.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasMoreItemsThan<T>(this If<List<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasMoreItemsThan(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have more items than given number.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasMoreItemsThan<T>(this If<IList<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasMoreItemsThan(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have more items than given number.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasMoreItemsThan<T>(this If<IEnumerable<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasMoreItemsThan(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have more items than given number.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasMoreItemsThan<T>(this If<ICollection<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasMoreItemsThan(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
     }
 }

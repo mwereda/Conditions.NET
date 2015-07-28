@@ -335,7 +335,7 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void HasItemsCountAtLeastmList_TwoItemsInCollectionExpectThree_ThrowArgumentException()
+        public void HasItemsCountAtLeastList_TwoItemsInCollectionExpectThree_ThrowArgumentException()
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
@@ -388,6 +388,134 @@ namespace Conditions.Guards.Tests.Extensions
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
             Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(5));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanList_EmptyCollectionExpectMoreThanOne_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanList_EmptyCollectionExpectMoreThanZero_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanList_TwoItemsInCollectionExpectMoreThanThree_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(3));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanList_TwoItemsInCollectionExpectMoreThanTwo_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIList_EmptyCollectionExpectMoreThanTwo_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIList_EmptyCollectionExpectMoreThanZero_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIList_TwoItemsInCollectionExpectMoreThanFour_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(4));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIList_TwoItemsInCollectionExpectMoreThanTwo_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIEnumerable_EmptyCollectionExpectMoreThanTen_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(10));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIEnumerable_EmptyCollectionExpectMoreThanZero_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIEnumerable_OneItemInCollectionExpectMoreThanTwo_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIEnumerable_OneItemInCollectionExpectMoreThanOne_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanICollection_EmptyCollectionExpectMoreThanTwo_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanICollection_EmptyCollectionExpectMoreThanZero_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanICollection_OneItemInCollectionExpectMoreThanFive_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(5));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanICollection_OneItemInCollectionExpectMoreThanOne_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
         }
     }
 }

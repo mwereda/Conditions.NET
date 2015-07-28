@@ -49,5 +49,49 @@ namespace Conditions.Guards
                 throw new ArgumentException(ifObject.ParamName);
             }
         }
+
+        /// <summary>
+        /// Guards against empty collections.
+        /// </summary> 
+        public static void IsNotEmpty<T>(this If<List<T>> ifObject)
+        {
+            if (ifObject.Value.IsEmpty())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against empty collections.
+        /// </summary> 
+        public static void IsNotEmpty<T>(this If<IList<T>> ifObject)
+        {
+            if (ifObject.Value.IsEmpty())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against empty collections.
+        /// </summary> 
+        public static void IsNotEmpty<T>(this If<IEnumerable<T>> ifObject)
+        {
+            if (ifObject.Value.IsEmpty())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against empty collections.
+        /// </summary> 
+        public static void IsNotEmpty<T>(this If<ICollection<T>> ifObject)
+        {
+            if (ifObject.Value.IsEmpty())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
     }
 }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Check.cs" />
     <Compile Include="Extensions\DateTimeChecks.cs" />
+    <Compile Include="Extensions\EnumerableChecks.cs" />
     <Compile Include="Extensions\NumericChecks.cs" />
     <Compile Include="Extensions\ObjectChecks.cs" />
     <Compile Include="Extensions\StringChecks.cs" />

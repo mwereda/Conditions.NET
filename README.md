@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/5fp63r349a778veo?svg=true)](https://ci.appveyor.com/project/mwereda/conditions-net)
+
 # Conditions.NET
 
 This is library that provides condition methods, thanks to which code we are writing is more verbose and clean.

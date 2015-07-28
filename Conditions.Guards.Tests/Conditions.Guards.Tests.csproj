@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="CheckTests.cs" />
     <Compile Include="Extensions\DateTimeChecksTests.cs" />
+    <Compile Include="DummyClass.cs" />
+    <Compile Include="Extensions\EnumerableChecksTests.cs" />
     <Compile Include="Extensions\NumericChecksTests.cs" />
     <Compile Include="Extensions\ObjectChecksTests.cs" />
     <Compile Include="Extensions\StringChecksTests.cs" />

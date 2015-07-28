@@ -325,5 +325,69 @@ namespace Conditions.Guards.Tests.Extensions
 
             Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(4));
         }
+
+        [Fact]
+        public void HasItemsCountAtLeastList_EmptyCollectionExpectOne_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(1));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastmList_TwoItemsInCollectionExpectThree_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(3));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIList_EmptyCollectionExpectTwo_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIList_TwoItemsInCollectionExpectFour_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(4));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIEnumerable_EmptyCollectionExpectTen_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(10));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIEnumerable_OneItemInCollectionExpectTwo_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastICollection_EmptyCollectionExpectTwo_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastICollection_OneItemInCollectionExpectFive_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(5));
+        }
     }
 }

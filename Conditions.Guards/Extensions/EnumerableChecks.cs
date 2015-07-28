@@ -137,5 +137,49 @@ namespace Conditions.Guards
                 throw new ArgumentException(ifObject.ParamName);
             }
         }
+
+        /// <summary>
+        /// Guards against collections that don't have more than one item.
+        /// </summary> 
+        public static void HasMoreThanOneItem<T>(this If<List<T>> ifObject)
+        {
+            if (!ifObject.Value.HasMoreThanOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have more than one item.
+        /// </summary> 
+        public static void HasMoreThanOneItem<T>(this If<IList<T>> ifObject)
+        {
+            if (!ifObject.Value.HasMoreThanOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have more than one item.
+        /// </summary> 
+        public static void HasMoreThanOneItem<T>(this If<IEnumerable<T>> ifObject)
+        {
+            if (!ifObject.Value.HasMoreThanOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have more than one item.
+        /// </summary> 
+        public static void HasMoreThanOneItem<T>(this If<ICollection<T>> ifObject)
+        {
+            if (!ifObject.Value.HasMoreThanOneItem())
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
     }
 }

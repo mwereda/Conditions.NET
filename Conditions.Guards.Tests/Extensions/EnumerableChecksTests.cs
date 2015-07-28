@@ -133,5 +133,69 @@ namespace Conditions.Guards.Tests.Extensions
 
             Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
+
+        [Fact]
+        public void HasMoreThanOneItemList_EmptyCollection_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemList_OneItemInCollection_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIList_EmptyCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIList_OneItemInCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIEnumerable_EmptyCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIEnumerable_OneItemInCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemICollection_EmptyCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemICollection_OneItemInCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+        }
     }
 }

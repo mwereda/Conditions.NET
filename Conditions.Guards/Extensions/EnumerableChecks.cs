@@ -11,7 +11,7 @@ namespace Conditions.Guards
         /// </summary> 
         public static void IsEmpty<T>(this If<List<T>> ifObject)
         {
-            if (ifObject.Value.IsEmpty())
+            if (!ifObject.Value.IsEmpty())
             {
                 throw new ArgumentException(ifObject.ParamName);
             }
@@ -22,7 +22,7 @@ namespace Conditions.Guards
         /// </summary> 
         public static void IsEmpty<T>(this If<IList<T>> ifObject)
         {
-            if (ifObject.Value.IsEmpty())
+            if (!ifObject.Value.IsEmpty())
             {
                 throw new ArgumentException(ifObject.ParamName);
             }
@@ -33,7 +33,7 @@ namespace Conditions.Guards
         /// </summary> 
         public static void IsEmpty<T>(this If<IEnumerable<T>> ifObject)
         {
-            if (ifObject.Value.IsEmpty())
+            if (!ifObject.Value.IsEmpty())
             {
                 throw new ArgumentException(ifObject.ParamName);
             }
@@ -44,7 +44,7 @@ namespace Conditions.Guards
         /// </summary> 
         public static void IsEmpty<T>(this If<ICollection<T>> ifObject)
         {
-            if (ifObject.Value.IsEmpty())
+            if (!ifObject.Value.IsEmpty())
             {
                 throw new ArgumentException(ifObject.ParamName);
             }

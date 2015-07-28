@@ -69,5 +69,69 @@ namespace Conditions.Guards.Tests.Extensions
 
             Assert.Throws<ArgumentException>(() => Check.If(list).IsNotEmpty());
         }
+
+        [Fact]
+        public void HasExactlyOneItemList_EmptyCollection_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemList_MoreThanOneItemInCollection_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIList_EmptyCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIList_MoreThanOneItemInCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIEnumerable_EmptyCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIEnumerable_MoreThanOneItemInCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemICollection_EmptyCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemICollection_MoreThanOneItemInCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+        }
     }
 }

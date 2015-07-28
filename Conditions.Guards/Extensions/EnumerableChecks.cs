@@ -225,5 +225,53 @@ namespace Conditions.Guards
                 throw new ArgumentException(ifObject.ParamName);
             }
         }
+
+        /// <summary>
+        /// Guards against collections that don't have given number of items.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasItemsCount<T>(this If<List<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasItemsCount(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have given number of items.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasItemsCount<T>(this If<IList<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasItemsCount(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have given number of items.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasItemsCount<T>(this If<IEnumerable<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasItemsCount(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
+
+        /// <summary>
+        /// Guards against collections that don't have given number of items.
+        /// </summary>        
+        /// <param name="count">Expected items count.</param>
+        public static void HasItemsCount<T>(this If<ICollection<T>> ifObject, int count)
+        {
+            if (!ifObject.Value.HasItemsCount(count))
+            {
+                throw new ArgumentException(ifObject.ParamName);
+            }
+        }
     }
 }

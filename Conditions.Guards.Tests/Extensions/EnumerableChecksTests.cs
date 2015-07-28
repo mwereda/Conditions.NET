@@ -229,5 +229,101 @@ namespace Conditions.Guards.Tests.Extensions
 
             Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
         }
+
+        [Fact]
+        public void HasItemsCountList_EmptyCollectionExpectOne_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountList_TwoItemsInCollectionExpectOne_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountList_TwoItemsInCollectionExpectThree_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(3));
+        }
+
+        [Fact]
+        public void HasItemsCountIList_EmptyCollectionExpectOne_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountIList_OneItemInCollectionExpectTwo_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(2));
+        }
+
+        [Fact]
+        public void HasItemsCountIList_OneItemInCollectionExpectZero_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(0));
+        }
+
+        [Fact]
+        public void HasItemsCountIEnumerable_EmptyCollectionExpectOne_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountIEnumerable_ThreeItemsInCollectionExpectFour_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(4));
+        }
+
+        [Fact]
+        public void HasItemsCountIEnumerable_ThreeItemsInCollectionExpectTwo_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(2));
+        }
+
+        [Fact]
+        public void HasItemsCountICollection_EmptyCollectionExpectOne_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountICollection_TwoItemsInCollectionExpectOne_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountICollection_TwoItemsInCollectionExpectFour_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(4));
+        }
     }
 }

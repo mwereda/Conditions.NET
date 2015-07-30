@@ -64,5 +64,23 @@ namespace Conditions.Guards
                     ifObject.ParamName);
             }
         }
+
+		/// <summary>
+		/// Guards against string that doesn't match given pattern.
+		/// </summary>
+		/// <param name="pattern">Pattern that string should match to.</param>
+	    public static void Matches(this If<string> ifObject, string pattern)
+	    {
+		    if (!ifObject.Value.Matches(pattern))
+		    {
+			    throw new ArgumentException(
+				    string.Format(
+					    "Given string doesn't match pattern. String: {0}{1}Pattern: {2}",
+					    ifObject.Value,
+					    Environment.NewLine,
+					    pattern),
+				    ifObject.ParamName);
+		    }
+	    }
     }
 }

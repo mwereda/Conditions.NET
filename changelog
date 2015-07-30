@@ -4,6 +4,10 @@ Version 1.1.0 [27/07/2015]
 + Enumeration conditions - HasExectlyOneItem, HasAtLeastOneItem, HasMoreThanOneItem, HasItemsCount
 
 [Guards.NET]
+Version 1.1.0 [not released yet]
++ Guards for collections
++ Matches guard for strings
+
 Version 1.0.2 [02/07/2015]
-* removed 'Extensions' part from namespace for ObjectChecks and DateTimeChecks
-+ it's possible to set parameter's name that's used when creating exception
+* Removed 'Extensions' part from namespace for ObjectChecks and DateTimeChecks
++ It's possible to set parameter's name that's used when creating exception

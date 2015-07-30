@@ -46,5 +46,13 @@ namespace Conditions.Guards.Tests.Extensions
 
             Assert.Throws<ArgumentException>(() => Check.If(sampleString).HasLengthAtLeast(minimalLength));
         }
+
+		[Theory]
+		[InlineData("123", @"^\d$")]
+		[InlineData("abc123", @"}\d{3}")]
+		public void Matches_StringDoesNotMatchPattern_ThrowsArgumentException(string @string, string pattern)
+		{
+			Assert.Throws<ArgumentException>(() => Check.If(@string).Matches(pattern));
+		}
     }
 }

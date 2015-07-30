@@ -1,4 +1,5 @@
 ﻿using System;
+using Shouldly;
 using Xunit;
 
 namespace Conditions.Tests
@@ -10,7 +11,7 @@ namespace Conditions.Tests
         {
             string name = null;
 
-            Assert.True(name.IsNullOrEmpty());
+            name.IsNullOrEmpty().ShouldBe(true);
         }
 
         [Fact]
@@ -18,7 +19,7 @@ namespace Conditions.Tests
         {
             string name = string.Empty;
 
-            Assert.True(name.IsNullOrEmpty());
+            name.IsNullOrEmpty().ShouldBe(true);
         }
 
         [Fact]
@@ -26,7 +27,7 @@ namespace Conditions.Tests
         {
             string name = "value";
 
-            Assert.False(name.IsNullOrEmpty());
+            name.IsNullOrEmpty().ShouldBe(false);
         }
 
         [Fact]
@@ -34,7 +35,7 @@ namespace Conditions.Tests
         {
             string name = null;
 
-            Assert.False(name.IsNotNullOrEmpty());
+            name.IsNotNullOrEmpty().ShouldBe(false);
         }
 
         [Fact]
@@ -42,7 +43,7 @@ namespace Conditions.Tests
         {
             string name = string.Empty;
 
-            Assert.False(name.IsNotNullOrEmpty());
+	        name.IsNotNullOrEmpty().ShouldBe(false);
         }
 
         [Fact]
@@ -50,7 +51,7 @@ namespace Conditions.Tests
         {
             string name = "value";
 
-            Assert.True(name.IsNotNullOrEmpty());
+            name.IsNotNullOrEmpty().ShouldBe(true);
         }
 
         [Fact]
@@ -58,7 +59,7 @@ namespace Conditions.Tests
         {
             string guid = "000123123";
 
-            Assert.False(guid.IsGuid());
+	        guid.IsGuid().ShouldBe(false);
         }
 
         [Fact]
@@ -66,7 +67,7 @@ namespace Conditions.Tests
         {
             string guid = Guid.NewGuid().ToString();
 
-            Assert.True(guid.IsGuid());
+            guid.IsGuid().ShouldBe(true);
         }
 
         [Fact]
@@ -74,7 +75,7 @@ namespace Conditions.Tests
         {
             string emailAddress = "test@example.com";
 
-            Assert.True(emailAddress.IsEmailAddress());
+            emailAddress.IsEmailAddress().ShouldBe(true);
         }
 
         [Theory]
@@ -84,7 +85,7 @@ namespace Conditions.Tests
         [InlineData("@!$^@%!*&@example.com")]
         public void IsEmailAddress_InvalidEmailAddress_ReturnsFalse(string emailAddress)
         {
-            Assert.False(emailAddress.IsEmailAddress());
+            emailAddress.IsEmailAddress().ShouldBe(false);
         }
 
         [Theory]
@@ -93,7 +94,7 @@ namespace Conditions.Tests
         [InlineData("really long string", 18)]
         public void HasLength_StringHasExpectedLength_ReturnsTrue(string @string, int expectedLength)
         {
-            Assert.True(@string.HasLength(expectedLength));
+            @string.HasLength(expectedLength).ShouldBe(true);
         }
 
         [Theory]
@@ -102,7 +103,7 @@ namespace Conditions.Tests
         [InlineData("long string", 18)]
         public void HasLength_StringHasNotExpectedLength_ReturnsFalse(string @string, int expectedLength)
         {
-            Assert.False(@string.HasLength(expectedLength));
+            @string.HasLength(expectedLength).ShouldBe(false);
         }
 
         [Theory]
@@ -112,7 +113,7 @@ namespace Conditions.Tests
         [InlineData("new string", 10)]
         public void HasLengthAtLeast_StringLongerOrEqualGivenValue_ReturnsTrue(string @string, int minimalLength)
         {
-            Assert.True(@string.HasLengthAtLeast(minimalLength));
+            @string.HasLengthAtLeast(minimalLength).ShouldBe(true);
         }
 
         [Theory]
@@ -122,7 +123,7 @@ namespace Conditions.Tests
         [InlineData("new string", 102)]
         public void HasLengthAtLeast_StringNotLongerOrEqualGivenValue_ReturnsFalse(string @string, int minimalLength)
         {
-            Assert.False(@string.HasLengthAtLeast(minimalLength));
+            @string.HasLengthAtLeast(minimalLength).ShouldBe(false);
         }
 
         [Theory]
@@ -130,7 +131,7 @@ namespace Conditions.Tests
         [InlineData("abc123", @"[a-z]{3}\d{3}")]
         public void Matches_StringMatchesPattern_ReturnsTrue(string @string, string pattern)
         {
-            Assert.True(@string.Matches(pattern));
+            @string.Matches(pattern).ShouldBe(true);
         }
 
         [Theory]
@@ -138,7 +139,7 @@ namespace Conditions.Tests
         [InlineData("abc123", @"}\d{3}")]
         public void Matches_StringDoesNotMatchPattern_ReturnsFalse(string @string, string pattern)
         {
-            Assert.False(@string.Matches(pattern));
+            @string.Matches(pattern).ShouldBe(false);
         }
     }
 }

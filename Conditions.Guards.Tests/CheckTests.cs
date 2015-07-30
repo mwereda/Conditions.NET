@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using Shouldly;
+using Xunit;
 
 namespace Conditions.Guards.Tests
 {
@@ -11,9 +12,9 @@ namespace Conditions.Guards.Tests
 
             var ifObject = Check.If(integer);
 
-            Assert.NotNull(ifObject);
-            Assert.Equal(integer, ifObject.Value);
-            Assert.Equal(string.Empty, ifObject.ParamName);
+			ifObject.ShouldNotBe(null);
+            ifObject.Value.ShouldBe(integer);
+            ifObject.ParamName.ShouldBeEmpty();            
         }
 
         [Fact]
@@ -24,9 +25,9 @@ namespace Conditions.Guards.Tests
 
             var ifObject = Check.If(boolean, paramName);
 
-            Assert.NotNull(ifObject);
-            Assert.Equal(boolean, ifObject.Value);
-            Assert.Equal(paramName, ifObject.ParamName);
+			ifObject.ShouldNotBe(null);
+			ifObject.Value.ShouldBe(boolean);
+			ifObject.ParamName.ShouldBe(paramName);  
         }
     }
 }

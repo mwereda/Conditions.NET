@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Shouldly;
 using Xunit;
 
 namespace Conditions.Guards.Tests.Extensions
@@ -11,7 +12,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(()=> Check.If(list).IsEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsEmpty());
         }
 
         [Fact]
@@ -19,7 +20,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).IsEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsEmpty());
         }
 
         [Fact]
@@ -27,7 +28,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).IsEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsEmpty());
         }
 
         [Fact]
@@ -35,7 +36,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).IsEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsEmpty());
         }
 
         [Fact]
@@ -43,7 +44,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).IsNotEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -51,7 +52,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).IsNotEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -59,7 +60,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).IsNotEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -67,7 +68,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).IsNotEmpty());
+			Should.Throw<ArgumentException>(() => Check.If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -75,7 +76,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -83,7 +84,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -91,7 +92,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -99,7 +100,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -107,7 +108,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -115,7 +116,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -123,7 +124,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -131,7 +132,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -139,7 +140,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -147,7 +148,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -155,7 +156,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -163,7 +164,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -171,7 +172,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -179,7 +180,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -187,7 +188,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -195,7 +196,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreThanOneItem());
         }
 
         [Fact]
@@ -203,7 +204,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
         }
 
         [Fact]
@@ -211,7 +212,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
         }
 
         [Fact]
@@ -219,7 +220,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
         }
 
         [Fact]
@@ -227,7 +228,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+			Should.Throw<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
         }
 
         [Fact]
@@ -235,7 +236,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(1));
         }
 
         [Fact]
@@ -243,7 +244,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(1));
         }
 
         [Fact]
@@ -251,7 +252,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(3));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(3));
         }
 
         [Fact]
@@ -259,7 +260,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(1));
         }
 
         [Fact]
@@ -267,7 +268,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(2));
         }
 
         [Fact]
@@ -275,7 +276,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(0));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(0));
         }
 
         [Fact]
@@ -283,7 +284,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(1));
         }
 
         [Fact]
@@ -291,7 +292,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(4));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(4));
         }
 
         [Fact]
@@ -299,7 +300,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(2));
         }
 
         [Fact]
@@ -307,7 +308,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(1));
         }
 
         [Fact]
@@ -315,7 +316,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(1));
         }
 
         [Fact]
@@ -323,7 +324,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCount(4));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCount(4));
         }
 
         [Fact]
@@ -331,7 +332,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(1));
         }
 
         [Fact]
@@ -339,7 +340,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(3));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(3));
         }
 
         [Fact]
@@ -347,7 +348,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
         }
 
         [Fact]
@@ -355,7 +356,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(4));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(4));
         }
 
         [Fact]
@@ -363,7 +364,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(10));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(10));
         }
 
         [Fact]
@@ -371,7 +372,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
         }
 
         [Fact]
@@ -379,7 +380,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(2));
         }
 
         [Fact]
@@ -387,7 +388,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(5));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasItemsCountAtLeast(5));
         }
 
         [Fact]
@@ -395,7 +396,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
         }
 
         [Fact]
@@ -403,7 +404,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
         }
 
         [Fact]
@@ -411,7 +412,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(3));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(3));
         }
 
         [Fact]
@@ -419,7 +420,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
         }
 
         [Fact]
@@ -427,7 +428,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
         }
 
         [Fact]
@@ -435,7 +436,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
         }
 
         [Fact]
@@ -443,7 +444,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(4));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(4));
         }
 
         [Fact]
@@ -451,7 +452,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
         }
 
         [Fact]
@@ -459,7 +460,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(10));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(10));
         }
 
         [Fact]
@@ -467,7 +468,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
         }
 
         [Fact]
@@ -475,7 +476,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
         }
 
         [Fact]
@@ -483,7 +484,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
         }
 
         [Fact]
@@ -491,7 +492,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(2));
         }
 
         [Fact]
@@ -499,7 +500,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(0));
         }
 
         [Fact]
@@ -507,7 +508,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(5));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(5));
         }
 
         [Fact]
@@ -515,7 +516,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Assert.Throws<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
+			Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
         }
     }
 }

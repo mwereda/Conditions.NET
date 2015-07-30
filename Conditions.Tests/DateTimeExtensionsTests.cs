@@ -1,4 +1,5 @@
 ﻿using System;
+using Shouldly;
 using Xunit;
 
 namespace Conditions.Tests
@@ -10,9 +11,9 @@ namespace Conditions.Tests
         {
             var currentDateTime = DateTime.Now;
 
-            Assert.False(currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(1)));
-            Assert.False(currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(1)));
-            Assert.False(currentDateTime.IsGreaterThan(currentDateTime.AddHours(1)));
+			currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(1)).ShouldBe(false);
+            currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(1)).ShouldBe(false);
+            currentDateTime.IsGreaterThan(currentDateTime.AddHours(1)).ShouldBe(false);
         }
 
         [Fact]
@@ -20,9 +21,9 @@ namespace Conditions.Tests
         {
             var currentDateTime = DateTime.Now;
 
-            Assert.True(currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(-1)));
-            Assert.True(currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(-1)));
-            Assert.True(currentDateTime.IsGreaterThan(currentDateTime.AddHours(-1)));
+            currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(-1)).ShouldBe(true);
+            currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(-1)).ShouldBe(true);
+			currentDateTime.IsGreaterThan(currentDateTime.AddHours(-1)).ShouldBe(true);
         }
 
         [Fact]
@@ -30,7 +31,7 @@ namespace Conditions.Tests
         {
             var currentDateTime = DateTime.Now;
 
-            Assert.False(currentDateTime.IsGreaterThan(currentDateTime));
+			currentDateTime.IsGreaterThan(currentDateTime).ShouldBe(false);
         }
     }
 }

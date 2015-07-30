@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using Shouldly;
+using Xunit;
 
 namespace Conditions.Tests
 {
@@ -9,7 +10,7 @@ namespace Conditions.Tests
         {
             var trueValue = true;
 
-            Assert.True(trueValue.IsTrue());
+            trueValue.IsTrue().ShouldBe(true);
         }
 
         [Fact]
@@ -17,7 +18,7 @@ namespace Conditions.Tests
         {
             var trueValue = false;
 
-            Assert.False(trueValue.IsTrue());
+			trueValue.IsTrue().ShouldBe(false);
         }
 
         [Fact]
@@ -25,7 +26,7 @@ namespace Conditions.Tests
         {
             var trueValue = true;
 
-            Assert.False(trueValue.IsFalse());
+			trueValue.IsFalse().ShouldBe(false);
         }
 
         [Fact]
@@ -33,7 +34,7 @@ namespace Conditions.Tests
         {
             var trueValue = false;
 
-            Assert.True(trueValue.IsFalse());
+			trueValue.IsFalse().ShouldBe(true);
         }
     }
 }

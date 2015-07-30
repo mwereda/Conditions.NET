@@ -1,4 +1,6 @@
-﻿using Xunit;
+﻿using Shouldly;
+
+using Xunit;
 
 namespace Conditions.Tests
 {
@@ -10,7 +12,7 @@ namespace Conditions.Tests
         [InlineData(23, 22)]
         public void IsGreaterThan_IntValueGreaterThanGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            Assert.True(value.IsGreaterThan(givenValue));
+            value.IsGreaterThan(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -19,7 +21,7 @@ namespace Conditions.Tests
         [InlineData(23, 24)]
         public void IsGreaterThan_IntValueLowerThanGivenValue_ReturnsFalse(int value, int givenValue)
         {
-            Assert.False(value.IsGreaterThan(givenValue));
+            value.IsGreaterThan(givenValue).ShouldBe(false);
         }
 
         [Theory]
@@ -28,7 +30,7 @@ namespace Conditions.Tests
         [InlineData(23, 22)]
         public void IsGreaterOrEqual_IntValueGreaterThanGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            Assert.True(value.IsGreaterOrEqual(givenValue));
+            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -37,7 +39,7 @@ namespace Conditions.Tests
         [InlineData(23, 24)]
         public void IsGreaterOrEqual_IntValueLowerThanGivenValue_ReturnsFalse(int value, int givenValue)
         {
-            Assert.False(value.IsGreaterOrEqual(givenValue));
+            value.IsGreaterOrEqual(givenValue).ShouldBe(false);
         }
 
         [Theory]
@@ -46,7 +48,7 @@ namespace Conditions.Tests
         [InlineData(233, 233)]
         public void IsGreaterOrEqual_IntValueEqualsGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            Assert.True(value.IsGreaterOrEqual(givenValue));
+            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -56,7 +58,7 @@ namespace Conditions.Tests
         [InlineData(23.3, 23.29)]
         public void IsGreaterThan_DecimalValueGreaterThanGivenValue_ReturnsTrue(decimal value, decimal givenValue)
         {
-            Assert.True(value.IsGreaterThan(givenValue));
+            value.IsGreaterThan(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -65,7 +67,7 @@ namespace Conditions.Tests
         [InlineData(23.2, 24.2)]
         public void IsGreaterThan_DecimalValueLowerThanGivenValue_ReturnsFalse(decimal value, decimal givenValue)
         {
-            Assert.False(value.IsGreaterThan(givenValue));
+            value.IsGreaterThan(givenValue).ShouldBe(false);
         }
 
         [Theory]
@@ -74,7 +76,7 @@ namespace Conditions.Tests
         [InlineData(23.2, 22.2)]
         public void IsGreaterOrEqual_DecimalValueGreaterThanGivenValue_ReturnsTrue(decimal value, decimal givenValue)
         {
-            Assert.True(value.IsGreaterOrEqual(givenValue));
+            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -83,7 +85,7 @@ namespace Conditions.Tests
         [InlineData(23.3, 24.3)]
         public void IsGreaterOrEqual_DecimalValueLowerThanGivenValue_ReturnsFalse(decimal value, decimal givenValue)
         {
-            Assert.False(value.IsGreaterOrEqual(givenValue));
+            value.IsGreaterOrEqual(givenValue).ShouldBe(false);
         }
 
         [Theory]
@@ -92,7 +94,7 @@ namespace Conditions.Tests
         [InlineData(2.33, 2.33)]
         public void IsGreaterOrEqual_DecimalValueEqualsGivenValue_ReturnsTrue(decimal value, decimal givenValue)
         {
-            Assert.True(value.IsGreaterOrEqual(givenValue));
+            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -101,7 +103,7 @@ namespace Conditions.Tests
         [InlineData(22, 23)]
         public void IsLowerThan_IntValueLowerThanGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            Assert.True(value.IsLowerThan(givenValue));
+            value.IsLowerThan(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -110,7 +112,7 @@ namespace Conditions.Tests
         [InlineData(24, 23)]
         public void IsLowerOrEqual_IntValueGreaterThanGivenValue_ReturnsFalse(int value, int givenValue)
         {
-            Assert.False(value.IsLowerOrEqual(givenValue));
+            value.IsLowerOrEqual(givenValue).ShouldBe(false);
         }
 
         [Theory]
@@ -119,7 +121,7 @@ namespace Conditions.Tests
         [InlineData(233, 233)]
         public void IsLowerOrEqual_IntValueEqualsGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            Assert.True(value.IsLowerOrEqual(givenValue));
+            value.IsLowerOrEqual(givenValue).ShouldBe(true);
         }
 
         [Theory]
@@ -129,7 +131,7 @@ namespace Conditions.Tests
         [InlineData(20, 2, 300)]
         public void IsBetween_ValueBetweenGivenRange_ReturnsTrue(int value, int minValue, int maxValue)
         {
-            Assert.True(value.IsBetween(minValue, maxValue));
+            value.IsBetween(minValue, maxValue).ShouldBe(true);
         }
 
         [Theory]
@@ -137,7 +139,7 @@ namespace Conditions.Tests
         [InlineData(12, 13, 23)]
         public void IsBetween_ValueIsNotBetweenGivenRange_ReturnsFalse(int value, int minValue, int maxValue)
         {
-            Assert.False(value.IsBetween(minValue, maxValue));
+            value.IsBetween(minValue, maxValue).ShouldBe(false);
         }
 
         [Theory]
@@ -149,7 +151,7 @@ namespace Conditions.Tests
         [InlineData(2.99, 2.0, 3.0)]
         public void IsBetween_DecimalValueBetweenGivenRange_ReturnsTrue(decimal value, decimal minValue, decimal maxValue)
         {
-            Assert.True(value.IsBetween(minValue, maxValue));
+            value.IsBetween(minValue, maxValue).ShouldBe(true);
         }
     }
 }

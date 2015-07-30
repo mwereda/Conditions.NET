@@ -1,4 +1,5 @@
 ﻿using System;
+using Shouldly;
 using Xunit;
 
 namespace Conditions.Guards.Tests.Extensions
@@ -10,7 +11,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var dummy = new DummyClass();
 
-            Assert.Throws<ArgumentException>(() => Check.If(dummy).IsNull());
+			Should.Throw<ArgumentException>(() => Check.If(dummy).IsNull());
         }
 
         [Fact]
@@ -18,11 +19,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             DummyClass dummy = null;
 
-            Assert.Throws<ArgumentNullException>(() => Check.If(dummy).IsNotNull());
-        }
-
-        class DummyClass
-        {             
+			Should.Throw<ArgumentNullException>(() => Check.If(dummy).IsNotNull());
         }
     }
 }

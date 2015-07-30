@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Shouldly;
 using Xunit;
 
 namespace Conditions.Tests
@@ -11,15 +12,15 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass>();
 
-            Assert.True(list.IsEmpty());
+            list.IsEmpty().ShouldBe(true);
         }
 
         [Fact]
-        public void IsEmpty_NotEmptyList_ReturnsTFalse()
+        public void IsEmpty_NotEmptyList_ReturnsFalse()
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.False(list.IsEmpty());
+            list.IsEmpty().ShouldBe(false);
         }
 
         [Fact]
@@ -27,7 +28,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.True(list.HasExactlyOneItem());
+            list.HasExactlyOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -35,7 +36,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasExactlyOneItem());
+			list.HasExactlyOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -43,7 +44,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasExactlyOneItem());
+            list.HasExactlyOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -51,7 +52,7 @@ namespace Conditions.Tests
         {
             var list = new Collection<DummyClass> { new DummyClass() };
 
-            Assert.True(list.HasExactlyOneItem());
+			list.HasExactlyOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -59,7 +60,7 @@ namespace Conditions.Tests
         {
             var list = new Collection<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasExactlyOneItem());
+            list.HasExactlyOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -67,7 +68,7 @@ namespace Conditions.Tests
         {
             var list = new Collection<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasExactlyOneItem());
+			list.HasExactlyOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -75,7 +76,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.False(list.HasMoreThanOneItem());
+			list.HasMoreThanOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -83,7 +84,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasMoreThanOneItem());
+			list.HasMoreThanOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -91,7 +92,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasMoreThanOneItem());
+			list.HasMoreThanOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -99,7 +100,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass>();
 
-            Assert.False(list.HasAtLeastOneItem());
+			list.HasAtLeastOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -107,7 +108,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.True(list.HasAtLeastOneItem());
+			list.HasAtLeastOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -115,7 +116,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasAtLeastOneItem());
+			list.HasAtLeastOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -123,7 +124,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasAtLeastOneItem());
+			list.HasAtLeastOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -131,23 +132,23 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.True(list.HasItemsCount(1));
+            list.HasItemsCount(1).ShouldBe(true);
         }
 
         [Fact]
-        public void HasItemsCount_TwoItemLisExpectedNumber_ReturnsFalse()
+        public void HasItemsCount_TwoItemLisExpectedNumber_ReturnsTrue()
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasItemsCount(2));
+			list.HasItemsCount(2).ShouldBe(true);
         }
 
         [Fact]
-        public void HasItemsCount_FourItemListExpectedNumber_ReturnsFalse()
+        public void HasItemsCount_FourItemListExpectedNumber_ReturnsTrue()
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasItemsCount(4));
+			list.HasItemsCount(4).ShouldBe(true);
         }
 
         [Fact]
@@ -155,7 +156,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.False(list.HasItemsCount(2));
+			list.HasItemsCount(2).ShouldBe(false);
         }
 
         [Fact]
@@ -163,7 +164,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasItemsCount(34));
+			list.HasItemsCount(34).ShouldBe(false);
         }
 
         [Fact]
@@ -171,7 +172,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasItemsCount(14));
+            list.HasItemsCount(14).ShouldBe(false);
         }
 
         [Fact]
@@ -179,7 +180,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.True(list.HasItemsCountAtLeast(1));
+			list.HasItemsCountAtLeast(1).ShouldBe(true);
         }
 
         [Fact]
@@ -187,7 +188,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Assert.False(list.HasItemsCountAtLeast(2));
+			list.HasItemsCountAtLeast(2).ShouldBe(false);
         }
 
         [Fact]
@@ -195,7 +196,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasItemsCountAtLeast(2));
+			list.HasItemsCountAtLeast(2).ShouldBe(true);
         }
 
         [Fact]
@@ -203,7 +204,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasItemsCountAtLeast(4));
+            list.HasItemsCountAtLeast(4).ShouldBe(false);
         }
 
         [Fact]
@@ -211,7 +212,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.True(list.HasMoreItemsThan(1));
+			list.HasMoreItemsThan(1).ShouldBe(true);
         }
 
         [Fact]
@@ -219,7 +220,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasMoreItemsThan(2));
+			list.HasMoreItemsThan(2).ShouldBe(false);
         }
 
         [Fact]
@@ -227,7 +228,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
 
-            Assert.False(list.HasMoreItemsThan(5));
+			list.HasMoreItemsThan(5).ShouldBe(false);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using Shouldly;
+using Xunit;
 
 namespace Conditions.Tests
 {
@@ -9,7 +10,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy= null;
             
-            Assert.True(dummy.IsNull());
+            dummy.IsNull().ShouldBe(true);
         }
 
         [Fact]
@@ -17,7 +18,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy = new DummyClass();
 
-            Assert.False(dummy.IsNull());
+            dummy.IsNull().ShouldBe(false);
         }
 
         [Fact]
@@ -25,7 +26,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy = null;
 
-            Assert.False(dummy.IsNotNull());
+            dummy.IsNotNull().ShouldBe(false);
         }
 
         [Fact]
@@ -33,12 +34,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy = new DummyClass();
 
-            Assert.True(dummy.IsNotNull());
-        }
-
-        class DummyClass
-        {
-             
+            dummy.IsNotNull().ShouldBe(true);
         }
     }
 }

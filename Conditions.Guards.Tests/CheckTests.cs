@@ -12,9 +12,9 @@ namespace Conditions.Guards.Tests
 
             var ifObject = Check.If(integer);
 
-			ifObject.ShouldNotBe(null);
+            ifObject.ShouldNotBe(null);
             ifObject.Value.ShouldBe(integer);
-            ifObject.ParamName.ShouldBeEmpty();            
+            ifObject.ParamName.ShouldBeEmpty();
         }
 
         [Fact]
@@ -25,9 +25,9 @@ namespace Conditions.Guards.Tests
 
             var ifObject = Check.If(boolean, paramName);
 
-			ifObject.ShouldNotBe(null);
-			ifObject.Value.ShouldBe(boolean);
-			ifObject.ParamName.ShouldBe(paramName);  
+            ifObject.ShouldNotBe(null);
+            ifObject.Value.ShouldBe(boolean);
+            ifObject.ParamName.ShouldBe(paramName);
         }
     }
 }

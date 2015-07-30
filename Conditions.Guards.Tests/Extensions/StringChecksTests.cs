@@ -11,15 +11,15 @@ namespace Conditions.Guards.Tests.Extensions
         [InlineData("")]
         public void IsNotNullOrEmpty_StringIsNullOrEmpty_ThrowsArgumentNullException(string invalidString)
         {
-			Should.Throw<ArgumentNullException>(() => Check.If(invalidString).IsNotNullOrEmpty());
-        }        
+            Should.Throw<ArgumentNullException>(() => Check.If(invalidString).IsNotNullOrEmpty());
+        }
 
         [Fact]
         public void IsGuid_StringIsInvalidGuid_ThrowsArgumentException()
         {
             const string invalidGuid = "1234vcxvxcv34324";
 
-			Should.Throw<ArgumentException>(() => Check.If(invalidGuid).IsGuid());
+            Should.Throw<ArgumentException>(() => Check.If(invalidGuid).IsGuid());
         }
 
         [Fact]
@@ -27,7 +27,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             const string invalidEmailAddress = "mail.example.com";
 
-			Should.Throw<ArgumentException>(() => Check.If(invalidEmailAddress).IsEmailAddress());
+            Should.Throw<ArgumentException>(() => Check.If(invalidEmailAddress).IsEmailAddress());
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace Conditions.Guards.Tests.Extensions
             const string sampleString = "sample";
             const int expectedLength = 3;
 
-			Should.Throw<ArgumentException>(() => Check.If(sampleString).HasLength(expectedLength));
+            Should.Throw<ArgumentException>(() => Check.If(sampleString).HasLength(expectedLength));
         }
 
         [Fact]
@@ -45,15 +45,15 @@ namespace Conditions.Guards.Tests.Extensions
             const string sampleString = "testing";
             const int minimalLength = 10;
 
-			Should.Throw<ArgumentException>(() => Check.If(sampleString).HasLengthAtLeast(minimalLength));
+            Should.Throw<ArgumentException>(() => Check.If(sampleString).HasLengthAtLeast(minimalLength));
         }
 
-		[Theory]
-		[InlineData("123", @"^\d$")]
-		[InlineData("abc123", @"}\d{3}")]
-		public void Matches_StringDoesNotMatchPattern_ThrowsArgumentException(string @string, string pattern)
-		{
-			Should.Throw<ArgumentException>(() => Check.If(@string).Matches(pattern));
-		}
+        [Theory]
+        [InlineData("123", @"^\d$")]
+        [InlineData("abc123", @"}\d{3}")]
+        public void Matches_StringDoesNotMatchPattern_ThrowsArgumentException(string @string, string pattern)
+        {
+            Should.Throw<ArgumentException>(() => Check.If(@string).Matches(pattern));
+        }
     }
 }

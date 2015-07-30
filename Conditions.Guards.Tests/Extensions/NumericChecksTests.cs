@@ -13,7 +13,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             const int value = 10;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterThan(givenValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterThan(givenValue));
         }
 
         [Theory]
@@ -24,7 +24,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             const decimal value = 11m;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterThan(givenValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterThan(givenValue));
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace Conditions.Guards.Tests.Extensions
             const int value = 10;
             const int minimalValue = 12;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterOrEqual(minimalValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterOrEqual(minimalValue));
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace Conditions.Guards.Tests.Extensions
             const decimal value = 100m;
             const decimal minimalValue = 100.01m;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterOrEqual(minimalValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsGreaterOrEqual(minimalValue));
         }
 
         [Theory]
@@ -52,7 +52,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             const int value = 10;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsLowerThan(givenValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsLowerThan(givenValue));
         }
 
         [Theory]
@@ -62,7 +62,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             const decimal value = 10.0m;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsLowerThan(givenValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsLowerThan(givenValue));
         }
 
         [Fact]
@@ -71,7 +71,7 @@ namespace Conditions.Guards.Tests.Extensions
             const int value = 12;
             const int maximalValue = 10;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsLowerOrEqual(maximalValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsLowerOrEqual(maximalValue));
         }
 
         [Fact]
@@ -80,7 +80,7 @@ namespace Conditions.Guards.Tests.Extensions
             const decimal value = 100.02m;
             const decimal maximalValue = 100.01m;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsLowerOrEqual(maximalValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsLowerOrEqual(maximalValue));
         }
 
         [Fact]
@@ -90,7 +90,7 @@ namespace Conditions.Guards.Tests.Extensions
             const int minimalValue = 11;
             const int maximalValue = 29;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsBetween(minimalValue, maximalValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsBetween(minimalValue, maximalValue));
         }
 
         [Fact]
@@ -100,7 +100,7 @@ namespace Conditions.Guards.Tests.Extensions
             const decimal minimalValue = 10.11m;
             const decimal maximalValue = 29m;
 
-			Should.Throw<ArgumentException>(() => Check.If(value).IsBetween(minimalValue, maximalValue));
+            Should.Throw<ArgumentException>(() => Check.If(value).IsBetween(minimalValue, maximalValue));
         }
     }
 }

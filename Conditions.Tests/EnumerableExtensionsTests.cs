@@ -36,7 +36,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-			list.HasExactlyOneItem().ShouldBe(false);
+            list.HasExactlyOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace Conditions.Tests
         {
             var list = new Collection<DummyClass> { new DummyClass() };
 
-			list.HasExactlyOneItem().ShouldBe(true);
+            list.HasExactlyOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -68,7 +68,7 @@ namespace Conditions.Tests
         {
             var list = new Collection<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-			list.HasExactlyOneItem().ShouldBe(false);
+            list.HasExactlyOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -76,7 +76,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-			list.HasMoreThanOneItem().ShouldBe(false);
+            list.HasMoreThanOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -84,7 +84,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-			list.HasMoreThanOneItem().ShouldBe(true);
+            list.HasMoreThanOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -92,7 +92,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-			list.HasMoreThanOneItem().ShouldBe(true);
+            list.HasMoreThanOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -100,7 +100,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass>();
 
-			list.HasAtLeastOneItem().ShouldBe(false);
+            list.HasAtLeastOneItem().ShouldBe(false);
         }
 
         [Fact]
@@ -108,7 +108,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-			list.HasAtLeastOneItem().ShouldBe(true);
+            list.HasAtLeastOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -116,7 +116,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-			list.HasAtLeastOneItem().ShouldBe(true);
+            list.HasAtLeastOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -124,7 +124,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-			list.HasAtLeastOneItem().ShouldBe(true);
+            list.HasAtLeastOneItem().ShouldBe(true);
         }
 
         [Fact]
@@ -140,7 +140,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-			list.HasItemsCount(2).ShouldBe(true);
+            list.HasItemsCount(2).ShouldBe(true);
         }
 
         [Fact]
@@ -148,7 +148,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass(), new DummyClass() };
 
-			list.HasItemsCount(4).ShouldBe(true);
+            list.HasItemsCount(4).ShouldBe(true);
         }
 
         [Fact]
@@ -156,7 +156,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-			list.HasItemsCount(2).ShouldBe(false);
+            list.HasItemsCount(2).ShouldBe(false);
         }
 
         [Fact]
@@ -164,7 +164,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-			list.HasItemsCount(34).ShouldBe(false);
+            list.HasItemsCount(34).ShouldBe(false);
         }
 
         [Fact]
@@ -180,7 +180,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-			list.HasItemsCountAtLeast(1).ShouldBe(true);
+            list.HasItemsCountAtLeast(1).ShouldBe(true);
         }
 
         [Fact]
@@ -188,7 +188,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-			list.HasItemsCountAtLeast(2).ShouldBe(false);
+            list.HasItemsCountAtLeast(2).ShouldBe(false);
         }
 
         [Fact]
@@ -196,7 +196,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
 
-			list.HasItemsCountAtLeast(2).ShouldBe(true);
+            list.HasItemsCountAtLeast(2).ShouldBe(true);
         }
 
         [Fact]
@@ -212,7 +212,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-			list.HasMoreItemsThan(1).ShouldBe(true);
+            list.HasMoreItemsThan(1).ShouldBe(true);
         }
 
         [Fact]
@@ -220,7 +220,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-			list.HasMoreItemsThan(2).ShouldBe(false);
+            list.HasMoreItemsThan(2).ShouldBe(false);
         }
 
         [Fact]
@@ -228,7 +228,7 @@ namespace Conditions.Tests
         {
             var list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
 
-			list.HasMoreItemsThan(5).ShouldBe(false);
+            list.HasMoreItemsThan(5).ShouldBe(false);
         }
     }
 }

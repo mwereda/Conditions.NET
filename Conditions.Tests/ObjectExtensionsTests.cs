@@ -8,8 +8,8 @@ namespace Conditions.Tests
         [Fact]
         public void IsNull_NullObject_ReturnsTrue()
         {
-            DummyClass dummy= null;
-            
+            DummyClass dummy = null;
+
             dummy.IsNull().ShouldBe(true);
         }
 

@@ -11,7 +11,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var dummy = new DummyClass();
 
-			Should.Throw<ArgumentException>(() => Check.If(dummy).IsNull());
+            Should.Throw<ArgumentException>(() => Check.If(dummy).IsNull());
         }
 
         [Fact]
@@ -19,7 +19,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             DummyClass dummy = null;
 
-			Should.Throw<ArgumentNullException>(() => Check.If(dummy).IsNotNull());
+            Should.Throw<ArgumentNullException>(() => Check.If(dummy).IsNotNull());
         }
     }
 }

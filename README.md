@@ -87,9 +87,9 @@ Enumerables:
   ```
   Check.If(list).IsEmpty()
   Check.If(list).IsNotEmpty()
-  Check.If(list).HasExactlyOneItem
-  Check.If(list).HasMoreThanOneItem
-  Check.If(list).HasAtLeastOneItem
+  Check.If(list).HasExactlyOneItem()
+  Check.If(list).HasMoreThanOneItem()
+  Check.If(list).HasAtLeastOneItem()
   Check.If(list).HasItemsCount(3)
   Check.If(list).HasItemsCountAtLeast(5)
   Check.If(list).HasMoreItemsThan(9)

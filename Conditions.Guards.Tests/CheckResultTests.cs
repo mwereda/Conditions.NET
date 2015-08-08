@@ -95,5 +95,16 @@ namespace Conditions.Guards.Tests
 
             Should.Throw<DummyException>(() => checkResult.Throw());
         }
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void ImplicitCasting_IsValidSet_ReturnsProperValueForIsValid(bool isValid)
+        {
+            var checkResult = new CheckResult(isValid);
+
+            bool validityResult = checkResult;
+            validityResult.ShouldBe(isValid);
+        }
     }
 }

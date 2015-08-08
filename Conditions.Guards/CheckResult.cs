@@ -38,5 +38,10 @@ namespace Conditions.Guards
         {
             this.exceptionToThrow = exceptionFactory();
         }
+
+        public static implicit operator bool(CheckResult checkResult)
+        {
+            return checkResult.IsValid;
+        }
     }
 }

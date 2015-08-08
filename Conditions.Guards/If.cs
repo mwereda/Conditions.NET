@@ -1,6 +1,6 @@
 ﻿namespace Conditions.Guards
 {
-    public class If<T>
+    public sealed class If<T>
     {
         private readonly T value;
         private string paramName;

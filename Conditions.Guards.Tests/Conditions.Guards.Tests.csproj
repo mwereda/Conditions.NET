@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckResultTests.cs" />
     <Compile Include="CheckTests.cs" />
+    <Compile Include="DummyException.cs" />
     <Compile Include="Extensions\DateTimeChecksTests.cs" />
     <Compile Include="DummyClass.cs" />
     <Compile Include="Extensions\EnumerableChecksTests.cs" />

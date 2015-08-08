@@ -59,5 +59,41 @@ namespace Conditions.Guards.Tests
 
             Should.Throw<DummyException>(() => checkResult.Throw());
         }
+
+        [Fact]
+        public void Throw_ArgumentExceptionConfiguredWithGenericMethod_ThrowsArgumentException()
+        {
+            var checkResult = new CheckResult(false);
+            checkResult.ThrowsException<ArgumentException>();
+
+            Should.Throw<ArgumentException>(() => checkResult.Throw());
+        }
+
+        [Fact]
+        public void Throw_ArgumentNullExceptionConfiguredWithGenericMethod_ThrowsNullArgumentException()
+        {
+            var checkResult = new CheckResult(false);
+            checkResult.ThrowsException<ArgumentNullException>();
+
+            Should.Throw<ArgumentNullException>(() => checkResult.Throw());
+        }
+
+        [Fact]
+        public void Throw_DivideByZeroExceptionConfiguredWithGenericMethod_ThrowsNullDivideByZeroException()
+        {
+            var checkResult = new CheckResult(false);
+            checkResult.ThrowsException<DivideByZeroException>();
+
+            Should.Throw<DivideByZeroException>(() => checkResult.Throw());
+        }
+
+        [Fact]
+        public void Throw_DummyExceptionConfiguredWithGenericMethod_ThrowsNullDummyException()
+        {
+            var checkResult = new CheckResult(false);
+            checkResult.ThrowsException<DummyException>();
+
+            Should.Throw<DummyException>(() => checkResult.Throw());
+        }
     }
 }

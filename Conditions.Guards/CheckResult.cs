@@ -29,8 +29,9 @@ namespace Conditions.Guards
             }
         }
 
-        internal void ThrowsException<T>(string message = "", string paramName = "") where T : Exception, new()
-        {            
+        internal void ThrowsException<T>() where T : Exception, new()
+        {
+            ThrowsException(() => new T());
         }
 
         internal void ThrowsException<T>(Func<T> exceptionFactory) where T : Exception

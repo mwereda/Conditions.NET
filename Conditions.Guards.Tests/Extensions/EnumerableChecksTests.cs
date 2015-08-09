@@ -40,6 +40,70 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
+        public void IsEmptyList_NotEmptyCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DummyException>(() => Check.If(list).AndThrowWhenFail<DummyException>().IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmptyIList_NotEmptyCollectionDivideByZeroExceptionConfigured_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.If(list).AndThrowWhenFail<DivideByZeroException>().IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmptyIEnumerable_NotEmptyCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.If(list).AndThrowWhenFail<InvalidOperationException>().IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmptyICollection_NotEmptyCollectionInvalidCastExceptionConfigured_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidCastException>(() => Check.If(list).AndThrowWhenFail<InvalidCastException>().IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmptyList_NotEmptyCollectionDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DummyException>(() => Check.If(list).AndThrowWhenFail(() => new DummyException()).IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmptyIList_NotEmptyCollectionDivideByZeroExceptionConfiguredWithFactory_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.If(list).AndThrowWhenFail(() => new DivideByZeroException()).IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmptyIEnumerable_NotEmptyCollectionInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.If(list).AndThrowWhenFail(() => new InvalidOperationException()).IsEmpty());
+        }
+
+        [Fact]
+        public void IsEmptyICollection_NotEmptyCollectionInvalidCastExceptionConfiguredWithFactory_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidCastException>(() => Check.If(list).AndThrowWhenFail(() => new InvalidCastException()).IsEmpty());
+        }
+
+        [Fact]
         public void IsNotEmptyList_EmptyCollection_ThrowArgumentException()
         {
             var list = new List<DummyClass>();
@@ -69,6 +133,38 @@ namespace Conditions.Guards.Tests.Extensions
             ICollection<DummyClass> list = new List<DummyClass>();
 
             Should.Throw<ArgumentException>(() => Check.If(list).IsNotEmpty());
+        }
+
+        [Fact]
+        public void IsNotEmptyList_EmptyCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.If(list).AndThrowWhenFail<InvalidOperationException>().IsNotEmpty());
+        }
+
+        [Fact]
+        public void IsNotEmptyIList_EmptyCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.If(list).AndThrowWhenFail<DummyException>().IsNotEmpty());
+        }
+
+        [Fact]
+        public void IsNotEmptyIEnumerable_EmptyCollectionInvalidTimeZoneExceptionConfigured_ThrowInvalidTimeZoneException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidTimeZoneException>(() => Check.If(list).AndThrowWhenFail<InvalidTimeZoneException>().IsNotEmpty());
+        }
+
+        [Fact]
+        public void IsNotEmptyICollection_EmptyCollectionNullReferenceExceptionConfigured_ThrowNullReferenceException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<NullReferenceException>(() => Check.If(list).AndThrowWhenFail<NullReferenceException>().IsNotEmpty());
         }
 
         [Fact]

@@ -5,7 +5,7 @@ namespace Conditions.Guards
     public sealed class If<T>
     {
         private readonly T value;
-        private readonly CheckResult checkResult;
+        private readonly ExceptionConfiguration exceptionConfiguration;
 
         private string paramName;
         private bool exceptionOverriden;
@@ -14,7 +14,7 @@ namespace Conditions.Guards
         {
             this.value = value;
             this.paramName = string.Empty;
-            this.checkResult = new CheckResult();
+            this.exceptionConfiguration = new ExceptionConfiguration();
         }
 
         internal If(T value, string paramName)
@@ -38,19 +38,19 @@ namespace Conditions.Guards
             get { return this.exceptionOverriden; }
         }
 
-        internal CheckResult CheckResult
+        internal ExceptionConfiguration ExceptionConfiguration
         {
-            get { return this.checkResult; }
+            get { return this.exceptionConfiguration; }
         }
 
         public If<T> AndThrowWhenFail<TException>() where TException : Exception, new()
         {
-            return SetExceptionAndReturnIfObject(() => this.checkResult.ThrowsException<TException>());
+            return SetExceptionAndReturnIfObject(() => this.exceptionConfiguration.ThrowsException<TException>());
         }
 
         public If<T> AndThrowWhenFail<TException>(Func<TException> exceptionFactory) where TException : Exception
         {
-            return SetExceptionAndReturnIfObject(() => this.checkResult.ThrowsException(exceptionFactory));
+            return SetExceptionAndReturnIfObject(() => this.exceptionConfiguration.ThrowsException(exceptionFactory));
         }
 
         private If<T> SetExceptionAndReturnIfObject(Action setException)

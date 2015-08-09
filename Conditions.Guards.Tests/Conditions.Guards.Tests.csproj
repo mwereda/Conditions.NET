@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckResultTests.cs" />
+    <Compile Include="ExceptionConfigurationTests.cs" />
     <Compile Include="CheckTests.cs" />
     <Compile Include="DummyException.cs" />
     <Compile Include="Extensions\DateTimeChecksTests.cs" />

@@ -2,27 +2,12 @@
 
 namespace Conditions.Guards
 {
-    public sealed class CheckResult
+    public sealed class ExceptionConfiguration
     {
         private Exception exceptionToThrow;
 
-        public bool IsValid
-        {
-            get; private set;
-        }
-
-        internal CheckResult()
-        {
-        }
-
-        internal CheckResult(bool isValid) : this()
-        {
-            IsValid = isValid;
-        }
-
         internal void Throw()
         {
-            IsValid = false;
             if (exceptionToThrow.IsNotNull())
             {
                 throw exceptionToThrow;
@@ -41,11 +26,6 @@ namespace Conditions.Guards
         internal void ThrowsException<T>(Func<T> exceptionFactory) where T : Exception
         {
             this.exceptionToThrow = exceptionFactory();
-        }
-
-        public static implicit operator bool (CheckResult checkResult)
-        {
-            return checkResult.IsValid;
         }
     }
 }

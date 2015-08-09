@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Check.cs" />
-    <Compile Include="CheckResult.cs" />
+    <Compile Include="ExceptionConfiguration.cs" />
     <Compile Include="Extensions\DateTimeChecks.cs" />
     <Compile Include="Extensions\EnumerableChecks.cs" />
     <Compile Include="Extensions\NumericChecks.cs" />

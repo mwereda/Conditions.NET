@@ -11,7 +11,11 @@ namespace Conditions.Guards
             get; private set;
         }
 
-        internal CheckResult(bool isValid)
+        internal CheckResult()
+        {
+        }
+
+        internal CheckResult(bool isValid) : this()
         {
             IsValid = isValid;
         }
@@ -39,7 +43,7 @@ namespace Conditions.Guards
             this.exceptionToThrow = exceptionFactory();
         }
 
-        public static implicit operator bool(CheckResult checkResult)
+        public static implicit operator bool (CheckResult checkResult)
         {
             return checkResult.IsValid;
         }

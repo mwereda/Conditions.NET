@@ -13,7 +13,7 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsGreaterThan(referenceDateTime))
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("DateTime should be greater than {0}", referenceDateTime), ifObject.ParamName));
                 }

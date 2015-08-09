@@ -5,6 +5,12 @@ namespace Conditions.Guards
     public sealed class ExceptionConfiguration
     {
         private Exception exceptionToThrow;
+        private bool exceptionOverriden;
+
+        internal bool ExceptionOverriden
+        {
+            get { return this.exceptionOverriden; }
+        }
 
         internal void Throw()
         {
@@ -19,12 +25,13 @@ namespace Conditions.Guards
         }
 
         internal void ThrowsException<T>() where T : Exception, new()
-        {
+        {            
             ThrowsException(() => new T());
         }
 
         internal void ThrowsException<T>(Func<T> exceptionFactory) where T : Exception
         {
+            this.exceptionOverriden = true;
             this.exceptionToThrow = exceptionFactory();
         }
     }

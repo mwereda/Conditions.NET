@@ -13,7 +13,7 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
                 }
@@ -29,7 +29,7 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
                 }
@@ -45,7 +45,7 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
                 }
@@ -61,7 +61,7 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
                 }
@@ -77,7 +77,7 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(()=> new ArgumentException(ifObject.ParamName));
                 }
@@ -93,7 +93,7 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
                 }
@@ -109,7 +109,7 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
                 }
@@ -125,7 +125,7 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsEmpty())
             {
-                if (!ifObject.ExceptionOverriden)
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
                 {
                     ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
                 }

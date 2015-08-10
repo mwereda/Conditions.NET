@@ -232,6 +232,70 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
+        public void HasExactlyOneItemList_EmptyCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIList_MoreThanOneItemInCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIEnumerable_EmptyCollectionInvalidCastExceptionConfigured_ThrowInvalidCastException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowWhenFail<InvalidCastException>().If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemICollection_MoreThanOneItemInCollectionNullReferenceException_ThrowNullReferenceException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<NullReferenceException>(() => Check.AndThrowWhenFail<NullReferenceException>().If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemList_EmptyCollectionInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIList_MoreThanOneItemInCollectionDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemIEnumerable_EmptyCollectionInvalidCastExceptionConfiguredWithFactory_ThrowInvalidCastException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowWhenFail(() => new InvalidCastException()).If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
+        public void HasExactlyOneItemICollection_MoreThanOneItemInCollectionNullReferenceExceptionConfiguredWithFactory_ThrowNullReferenceException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<NullReferenceException>(() => Check.AndThrowWhenFail(() => new NullReferenceException()).If(list).HasExactlyOneItem());
+        }
+
+        [Fact]
         public void HasMoreThanOneItemList_EmptyCollection_ThrowArgumentException()
         {
             var list = new List<DummyClass>();

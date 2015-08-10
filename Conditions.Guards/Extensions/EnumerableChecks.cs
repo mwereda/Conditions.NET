@@ -141,7 +141,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasExactlyOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -152,7 +157,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasExactlyOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -163,7 +173,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasExactlyOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -174,7 +189,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasExactlyOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 

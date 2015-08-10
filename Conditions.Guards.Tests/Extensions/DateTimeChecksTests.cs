@@ -24,12 +24,12 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var currentDateTime = DateTime.Now;
 
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
         }
 
         [Fact]
@@ -37,12 +37,12 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var currentDateTime = DateTime.Now;
 
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
         }
 
         [Fact]
@@ -50,12 +50,12 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var currentDateTime = DateTime.Now;
 
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
         }
 
         [Fact]
@@ -63,12 +63,12 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var currentDateTime = DateTime.Now;
 
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
         }
     }
 }

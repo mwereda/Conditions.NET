@@ -44,7 +44,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(list).IsEmpty());
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).IsEmpty());
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<DivideByZeroException>(() => Check.AndThrowWhenFail<DivideByZeroException>().If(list).IsEmpty());
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail<DivideByZeroException>().If(list).IsEmpty());
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(list).IsEmpty());
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).IsEmpty());
         }
 
         [Fact]
@@ -68,7 +68,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<InvalidCastException>(() => Check.AndThrowWhenFail<InvalidCastException>().If(list).IsEmpty());
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail<InvalidCastException>().If(list).IsEmpty());
         }
 
         [Fact]
@@ -76,7 +76,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(list).IsEmpty());
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).IsEmpty());
         }
 
         [Fact]
@@ -84,7 +84,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<DivideByZeroException>(() => Check.AndThrowWhenFail(() => new DivideByZeroException()).If(list).IsEmpty());
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail(() => new DivideByZeroException()).If(list).IsEmpty());
         }
 
         [Fact]
@@ -92,7 +92,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(list).IsEmpty());
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).IsEmpty());
         }
 
         [Fact]
@@ -100,7 +100,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
-            Should.Throw<InvalidCastException>(() => Check.AndThrowWhenFail(() => new InvalidCastException()).If(list).IsEmpty());
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail(() => new InvalidCastException()).If(list).IsEmpty());
         }
 
         [Fact]
@@ -140,7 +140,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(list).IsNotEmpty());
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -148,7 +148,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass>();
 
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(list).IsNotEmpty());
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -156,7 +156,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Should.Throw<InvalidTimeZoneException>(() => Check.AndThrowWhenFail<InvalidTimeZoneException>().If(list).IsNotEmpty());
+            Should.Throw<InvalidTimeZoneException>(() => Check.AndThrowThisWhenFail<InvalidTimeZoneException>().If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -164,7 +164,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass>();
 
-            Should.Throw<NullReferenceException>(() => Check.AndThrowWhenFail<NullReferenceException>().If(list).IsNotEmpty());
+            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail<NullReferenceException>().If(list).IsNotEmpty());
         }
 
         [Fact]
@@ -236,7 +236,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail<InvalidOperationException>().If(list).HasExactlyOneItem());
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -244,7 +244,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail<DummyException>().If(list).HasExactlyOneItem());
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -252,7 +252,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Should.Throw<InvalidCastException>(() => Check.AndThrowWhenFail<InvalidCastException>().If(list).HasExactlyOneItem());
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail<InvalidCastException>().If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -260,7 +260,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Should.Throw<NullReferenceException>(() => Check.AndThrowWhenFail<NullReferenceException>().If(list).HasExactlyOneItem());
+            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail<NullReferenceException>().If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -268,7 +268,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             var list = new List<DummyClass>();
 
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowWhenFail(() => new InvalidOperationException()).If(list).HasExactlyOneItem());
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -276,7 +276,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Should.Throw<DummyException>(() => Check.AndThrowWhenFail(() => new DummyException()).If(list).HasExactlyOneItem());
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -284,7 +284,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             IEnumerable<DummyClass> list = new List<DummyClass>();
 
-            Should.Throw<InvalidCastException>(() => Check.AndThrowWhenFail(() => new InvalidCastException()).If(list).HasExactlyOneItem());
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail(() => new InvalidCastException()).If(list).HasExactlyOneItem());
         }
 
         [Fact]
@@ -292,7 +292,7 @@ namespace Conditions.Guards.Tests.Extensions
         {
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
 
-            Should.Throw<NullReferenceException>(() => Check.AndThrowWhenFail(() => new NullReferenceException()).If(list).HasExactlyOneItem());
+            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail(() => new NullReferenceException()).If(list).HasExactlyOneItem());
         }
 
         [Fact]

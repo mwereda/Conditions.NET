@@ -3,7 +3,7 @@
 # Conditions.NET
 
 This is library that provides condition methods, thanks to which code we are writing is more verbose and clean.
-Currently it provides conditions for objects, strings, numerics, booleans and datatime.
+Currently it provides conditions for objects, strings, numerics, booleans, datatime and enumerables.
 
 **Available conditions:**
 
@@ -54,7 +54,7 @@ NuGet: https://www.nuget.org/packages/Conditions.NET
 # Guards.NET
 
 This library provides guard clauses that could be used to guard against not expected values.
-It provides conditions for objects, strings, numerics and datatime.
+It provides conditions for objects, strings, numerics, datatime and enumerables.
 
 **Available checks:**
 

@@ -360,6 +360,70 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
+        public void HasMoreThanOneItemList_OneItemInCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIList_EmptyCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIEnumerable_OneItemInCollectionInvalidCastExceptionConfigured_ThrowInvalidCastException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail<InvalidCastException>().If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemICollection_OneItemInCollectionDividedByZeroExceptionConfigured_ThrowDividedByZeroException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail<DivideByZeroException>().If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemList_OneItemInCollectionInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIList_EmptyCollectionDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemIEnumerable_OneItemInCollectionInvalidCastExceptionConfiguredWithFactory_ThrowInvalidCastException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail(() => new InvalidCastException()).If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
+        public void HasMoreThanOneItemICollection_OneItemInCollectionDividedByZeroExceptionConfiguredWithFactory_ThrowDividedByZeroException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail(() => new DivideByZeroException()).If(list).HasMoreThanOneItem());
+        }
+
+        [Fact]
         public void HasAtLeastOneItemList_EmptyCollection_ThrowArgumentException()
         {
             var list = new List<DummyClass>();
@@ -389,6 +453,70 @@ namespace Conditions.Guards.Tests.Extensions
             ICollection<DummyClass> list = new List<DummyClass>();
 
             Should.Throw<ArgumentException>(() => Check.If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemList_EmptyCollectionArgumentNullExceptionConfigured_ThrowArgumentNullException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail<ArgumentNullException>().If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemIList_EmptyCollectionNullReferenceExceptionConfigured_ThrowNullReferenceException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail<NullReferenceException>().If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemIEnumerable_EmptyCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemICollection_EmptyCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemList_EmptyCollectionArgumentNullExceptionConfiguredWithFactory_ThrowArgumentNullException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail(() => new ArgumentNullException()).If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemIList_EmptyCollectionNullReferenceExceptionConfiguredWithFactory_ThrowNullReferenceException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail(() => new NullReferenceException()).If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemIEnumerable_EmptyCollectionDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).HasAtLeastOneItem());
+        }
+
+        [Fact]
+        public void HasAtLeastOneItemICollection_EmptyCollectionInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).HasAtLeastOneItem());
         }
 
         [Fact]

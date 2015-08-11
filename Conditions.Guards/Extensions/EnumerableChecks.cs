@@ -205,7 +205,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasMoreThanOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -216,7 +221,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasMoreThanOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -227,7 +237,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasMoreThanOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -238,7 +253,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasMoreThanOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -249,7 +269,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasAtLeastOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -260,7 +285,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasAtLeastOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -271,7 +301,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasAtLeastOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -282,7 +317,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasAtLeastOneItem())
             {
-                throw new ArgumentException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 

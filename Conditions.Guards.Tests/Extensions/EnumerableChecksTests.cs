@@ -616,6 +616,86 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
+        public void HasItemsCountList_TwoItemsInCollectionExpectThreeArgumentNullExceptionConfigured_ThrowNullArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail<ArgumentNullException>().If(list).HasItemsCount(3));
+        }
+
+        [Fact]
+        public void HasItemsCountIList_EmptyCollectionExpectOneInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountIList_OneItemInCollectionExpectZeroDivideByZeroExceptionConfigured_ThrowDivideByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail<DivideByZeroException>().If(list).HasItemsCount(0));
+        }
+
+        [Fact]
+        public void HasItemsCountIEnumerable_ThreeItemsInCollectionExpectTwoOverflowExceptionConfigured_ThrowOverflowException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
+
+            Should.Throw<OverflowException>(() => Check.AndThrowThisWhenFail<OverflowException>().If(list).HasItemsCount(2));
+        }
+
+        [Fact]
+        public void HasItemsCountICollection_TwoItemsInCollectionExpectFourArgumentExceptionConfigured_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<ArgumentException>(() => Check.AndThrowThisWhenFail<ArgumentException>().If(list).HasItemsCount(4));
+        }
+
+        [Fact]
+        public void HasItemsCountList_TwoItemsInCollectionExpectThreeArgumentNullExceptionConfiguredWithFactory_ThrowNullArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail(() => new ArgumentNullException()).If(list).HasItemsCount(3));
+        }
+
+        [Fact]
+        public void HasItemsCountIList_EmptyCollectionExpectOneInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).HasItemsCount(1));
+        }
+
+        [Fact]
+        public void HasItemsCountIList_OneItemInCollectionExpectZeroDivideByZeroExceptionConfiguredWithFactory_ThrowDivideByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail(() => new DivideByZeroException()).If(list).HasItemsCount(0));
+        }
+
+        [Fact]
+        public void HasItemsCountIEnumerable_ThreeItemsInCollectionExpectTwoOverflowExceptionConfiguredWithFactory_ThrowOverflowException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass(), new DummyClass() };
+
+            Should.Throw<OverflowException>(() => Check.AndThrowThisWhenFail(() => new OverflowException()).If(list).HasItemsCount(2));
+        }
+
+        [Fact]
+        public void HasItemsCountICollection_TwoItemsInCollectionExpectFourArgumentExceptionConfiguredWithFactory_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<ArgumentException>(() => Check.AndThrowThisWhenFail(() => new ArgumentException()).If(list).HasItemsCount(4));
+        }
+
+        [Fact]
         public void HasItemsCountAtLeastList_EmptyCollectionExpectOne_ThrowArgumentException()
         {
             var list = new List<DummyClass>();

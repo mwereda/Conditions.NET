@@ -760,6 +760,70 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
+        public void HasItemsCountAtLeastList_EmptyCollectionExpectOneArgumentNullExceptionConfigured_ThrowArgumentNullException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail<ArgumentNullException>().If(list).HasItemsCountAtLeast(1));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIList_TwoItemsInCollectionExpectFourInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).HasItemsCountAtLeast(4));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIEnumerable_EmptyCollectionExpectTenDummyExceptionConfigured_ThrowDummyException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).HasItemsCountAtLeast(10));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastICollection_EmptyCollectionExpectTwoDivideByZeroExceptionConfigured_ThrowDivideByZeroException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail<DivideByZeroException>().If(list).HasItemsCountAtLeast(2));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastList_EmptyCollectionExpectOneArgumentNullExceptionConfiguredWithFactory_ThrowArgumentNullException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail(() => new ArgumentNullException()).If(list).HasItemsCountAtLeast(1));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIList_TwoItemsInCollectionExpectFourInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass(), new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).HasItemsCountAtLeast(4));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastIEnumerable_EmptyCollectionExpectTenDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).HasItemsCountAtLeast(10));
+        }
+
+        [Fact]
+        public void HasItemsCountAtLeastICollection_EmptyCollectionExpectTwoDivideByZeroExceptionConfiguredWithFactory_ThrowDivideByZeroException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail(() => new DivideByZeroException()).If(list).HasItemsCountAtLeast(2));
+        }
+
+        [Fact]
         public void HasMoreItemsThanList_EmptyCollectionExpectMoreThanOne_ThrowArgumentException()
         {
             var list = new List<DummyClass>();
@@ -885,6 +949,70 @@ namespace Conditions.Guards.Tests.Extensions
             ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
 
             Should.Throw<ArgumentException>(() => Check.If(list).HasMoreItemsThan(1));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanList_EmptyCollectionExpectMoreThanOneArgumentExceptionConfigured_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<ArgumentException>(() => Check.AndThrowThisWhenFail<ArgumentException>().If(list).HasMoreItemsThan(1));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIList_EmptyCollectionExpectMoreThanTwoInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIEnumerable_EmptyCollectionExpectMoreThanTenArgumentNullExceptionConfigured_ThrowArgumentNullException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail<ArgumentNullException>().If(list).HasMoreItemsThan(10));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanICollection_EmptyCollectionExpectMoreThanTwoNullReferenceExceptionConfigured_ThrowNullReferenceException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail<NullReferenceException>().If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanList_EmptyCollectionExpectMoreThanOneArgumentExceptionConfiguredWithFactory_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<ArgumentException>(() => Check.AndThrowThisWhenFail(() => new ArgumentException()).If(list).HasMoreItemsThan(1));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIList_EmptyCollectionExpectMoreThanTwoInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).HasMoreItemsThan(2));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanIEnumerable_EmptyCollectionExpectMoreThanTenArgumentNullExceptionConfiguredWithFactory_ThrowArgumentNullException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail(() => new ArgumentNullException()).If(list).HasMoreItemsThan(10));
+        }
+
+        [Fact]
+        public void HasMoreItemsThanICollection_EmptyCollectionExpectMoreThanTwoNullReferenceExceptionConfiguredWithFactory_ThrowNullReferenceException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail(() => new NullReferenceException()).If(list).HasMoreItemsThan(2));
         }
     }
 }

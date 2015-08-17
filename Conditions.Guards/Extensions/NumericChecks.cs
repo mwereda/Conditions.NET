@@ -13,8 +13,13 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsLowerOrEqual(givenValue))
             {
-                throw new ArgumentException(string.Format("Value should be greater than {0}.", givenValue),
-                    ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("Value should be greater than {0}.", givenValue),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -26,8 +31,13 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsLowerThan(minimalValue))
             {
-                throw new ArgumentException(string.Format("Value should be greater than or equal {0}.", minimalValue),
-                    ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("Value should be greater than or equal {0}.", minimalValue),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -39,8 +49,13 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsGreaterOrEqual(givenValue))
             {
-                throw new ArgumentException(string.Format("Value should be lower than {0}.", givenValue),
-                    ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("Value should be lower than {0}.", givenValue),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -52,8 +67,13 @@ namespace Conditions.Guards
         {
             if (ifObject.Value.IsGreaterThan(maximalValue))
             {
-                throw new ArgumentException(string.Format("Value should be lower than or equal {0}.", maximalValue),
-                    ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("Value should be lower than or equal {0}.", maximalValue),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -67,8 +87,13 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsBetween(minimalValue, maximalValue))
             {
-                throw new ArgumentException(
-                    string.Format("Value should be in range ({0},{1}", minimalValue, maximalValue), ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("Value should be in range ({0},{1}", minimalValue, maximalValue),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
     }

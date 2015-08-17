@@ -2,7 +2,7 @@
 
 namespace Conditions.Guards
 {
-    public sealed class ExceptionConfiguration
+    internal sealed class ExceptionConfiguration
     {
         private Exception exceptionToThrow;
         private bool exceptionOverriden;

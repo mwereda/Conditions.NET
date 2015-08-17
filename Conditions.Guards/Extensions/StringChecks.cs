@@ -12,7 +12,12 @@ namespace Conditions.Guards
         {
             if (string.IsNullOrEmpty(ifObject.Value))
             {
-                throw new ArgumentNullException(ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentNullException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -23,7 +28,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsGuid())
             {
-                throw new ArgumentException("String is not valid GUID.", ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException("String is not valid GUID.", ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -34,7 +44,12 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.IsEmailAddress())
             {
-                throw new ArgumentException("String is not valid email address.", ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException("String is not valid email address.", ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -46,8 +61,13 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasLength(expectedLength))
             {
-                throw new ArgumentException(
-                    string.Format("String doesn't have expected length ({0} chars)", expectedLength), ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(
+                    string.Format("String doesn't have expected length ({0} chars)", expectedLength), ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -59,9 +79,14 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.HasLengthAtLeast(minimalLength))
             {
-                throw new ArgumentException(
-                    string.Format("String is too short. Expected length is {0} or longer.", minimalLength),
-                    ifObject.ParamName);
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(
+                        string.Format("String is too short. Expected length is {0} or longer.", minimalLength),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
 
@@ -73,13 +98,18 @@ namespace Conditions.Guards
         {
             if (!ifObject.Value.Matches(pattern))
             {
-                throw new ArgumentException(
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(
                     string.Format(
                         "Given string doesn't match pattern. String: {0}{1}Pattern: {2}",
                         ifObject.Value,
                         Environment.NewLine,
                         pattern),
-                    ifObject.ParamName);
+                    ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
             }
         }
     }

@@ -95,6 +95,13 @@ Enumerables:
   Check.If(list).HasMoreItemsThan(9)
   ```
   
+It is possible to configure which exception should be thrown. It can be done by using ```AndThrowThisWhenFail``` static method on Check object. You can configure every check from Guards.NET to throw any exception you want.
+Examples of use:
+  ```
+  Check.AndThrowThisWhenFail<InvalidOperationException>().If(date).IsGreaterThan(referenceDate)
+  Check.AndThrowThisWhenFail(()=> new MyCustomException("wrong values", min, max).If(number).IsBetween(5, 10)
+  ```
+  
 NuGet: https://www.nuget.org/packages/Guards.NET
 
 # Contributions

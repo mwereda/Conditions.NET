@@ -4,6 +4,9 @@ Version 1.1.0 [27/07/2015]
 + Enumeration conditions - HasExectlyOneItem, HasAtLeastOneItem, HasMoreThanOneItem, HasItemsCount
 
 [Guards.NET]
+Version 1.2.0 [18/08/2015]
++ Possibility to configure exception that should be thrown.
+
 Version 1.1.0 [02/08/2015]
 + Guards for collections
 + Matches guard for strings

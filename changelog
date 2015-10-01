@@ -4,6 +4,9 @@ Version 1.1.0 [27/07/2015]
 + Enumeration conditions - HasExectlyOneItem, HasAtLeastOneItem, HasMoreThanOneItem, HasItemsCount
 
 [Guards.NET]
+Varsion 1.2.1 [not released yet]
++ Added AndThrowThisWhenFails method and marked AndThrowThisWhenFail as obsolete.
+
 Version 1.2.0 [18/08/2015]
 + Possibility to configure exception that should be thrown.
 

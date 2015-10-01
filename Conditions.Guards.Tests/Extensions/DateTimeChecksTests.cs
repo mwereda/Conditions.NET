@@ -20,7 +20,7 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowInvalidOperationException_ThrowsInvalidOperationException()
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowInvalidOperationExceptionObsolete_ThrowsInvalidOperationException()
         {
             var currentDateTime = DateTime.Now;
 
@@ -33,7 +33,20 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowInvalidOperationExceptionWithFactory_ThrowsInvalidOperationException()
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowInvalidOperationException_ThrowsInvalidOperationException()
+        {
+            var currentDateTime = DateTime.Now;
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+        }
+
+        [Fact]
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowInvalidOperationExceptionWithFactoryObsolete_ThrowsInvalidOperationException()
         {
             var currentDateTime = DateTime.Now;
 
@@ -46,7 +59,20 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowDummyException_ThrowsDummyException()
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowInvalidOperationExceptionWithFactory_ThrowsInvalidOperationException()
+        {
+            var currentDateTime = DateTime.Now;
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+        }
+
+        [Fact]
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowDummyExceptionObsolete_ThrowsDummyException()
         {
             var currentDateTime = DateTime.Now;
 
@@ -59,7 +85,20 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowDummyExceptionWithFactory_ThrowsDummyException()
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowDummyException_ThrowsDummyException()
+        {
+            var currentDateTime = DateTime.Now;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+        }
+
+        [Fact]
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowDummyExceptionWithFactoryObsolete_ThrowsDummyException()
         {
             var currentDateTime = DateTime.Now;
 
@@ -69,6 +108,19 @@ namespace Conditions.Guards.Tests.Extensions
             Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
             Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
             Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
+        }
+
+        [Fact]
+        public void IsGreaterThan_DateTimeIsLowerOrEqualReferenceDateSetToThrowDummyExceptionWithFactory_ThrowsDummyException()
+        {
+            var currentDateTime = DateTime.Now;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddDays(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMilliseconds(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddHours(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddMinutes(1)));
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(currentDateTime).IsGreaterThan(currentDateTime.AddSeconds(1)));
         }
     }
 }

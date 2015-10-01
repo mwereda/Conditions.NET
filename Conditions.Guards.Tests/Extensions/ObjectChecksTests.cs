@@ -15,7 +15,7 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsNull_NotNullObjectArgumentNullExceptionConfigured_ThrowsArgumentNullException()
+        public void IsNull_NotNullObjectArgumentNullExceptionConfiguredObsolete_ThrowsArgumentNullException()
         {
             var dummy = new DummyClass();
 
@@ -23,11 +23,27 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsNull_NotNullObjectArgumentNullExceptionConfiguredWithFactory_ThrowsArgumentNullException()
+        public void IsNull_NotNullObjectArgumentNullExceptionConfigured_ThrowsArgumentNullException()
+        {
+            var dummy = new DummyClass();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFails<ArgumentNullException>().If(dummy).IsNull());
+        }
+
+        [Fact]
+        public void IsNull_NotNullObjectArgumentNullExceptionConfiguredWithFactoryObsolete_ThrowsArgumentNullException()
         {
             var dummy = new DummyClass();
 
             Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail(() => new ArgumentNullException()).If(dummy).IsNull());
+        }
+
+        [Fact]
+        public void IsNull_NotNullObjectArgumentNullExceptionConfiguredWithFactory_ThrowsArgumentNullException()
+        {
+            var dummy = new DummyClass();
+
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFails(() => new ArgumentNullException()).If(dummy).IsNull());
         }
 
         [Fact]
@@ -39,7 +55,7 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsNotNull_NullObjectDummyExceptionConfigured_ThrowsDummyException()
+        public void IsNotNull_NullObjectDummyExceptionConfiguredObsolete_ThrowsDummyException()
         {
             DummyClass dummy = null;
 
@@ -47,11 +63,27 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsNotNull_NullObjectDummyExceptionConfiguredWithFactory_ThrowsDummyException()
+        public void IsNotNull_NullObjectDummyExceptionConfigured_ThrowsDummyException()
+        {
+            DummyClass dummy = null;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(dummy).IsNotNull());
+        }
+
+        [Fact]
+        public void IsNotNull_NullObjectDummyExceptionConfiguredWithFactoryObsolete_ThrowsDummyException()
         {
             DummyClass dummy = null;
 
             Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(dummy).IsNotNull());
+        }
+
+        [Fact]
+        public void IsNotNull_NullObjectDummyExceptionConfiguredWithFactory_ThrowsDummyException()
+        {
+            DummyClass dummy = null;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(dummy).IsNotNull());
         }
     }
 }

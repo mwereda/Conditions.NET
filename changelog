@@ -1,19 +1,22 @@
 [Conditions.NET]
+Version 1.2.0 [not released yet]
++ IsNullOrEmpty and IsNotNullOrEmpty conditions for enumerables.
+
 Version 1.1.0 [27/07/2015]
 + Matches condition - checks whether given string matches Regex pattern.
-+ Enumeration conditions - HasExectlyOneItem, HasAtLeastOneItem, HasMoreThanOneItem, HasItemsCount
++ Enumeration conditions - HasExectlyOneItem, HasAtLeastOneItem, HasMoreThanOneItem, HasItemsCount.
 
 [Guards.NET]
-Varsion 1.2.1 [not released yet]
+Version 1.2.1 [not released yet]
 + Added AndThrowThisWhenFails method and marked AndThrowThisWhenFail as obsolete.
 
 Version 1.2.0 [18/08/2015]
 + Possibility to configure exception that should be thrown.
 
 Version 1.1.0 [02/08/2015]
-+ Guards for collections
-+ Matches guard for strings
++ Guards for collections.
++ Matches guard for strings.
 
 Version 1.0.2 [02/07/2015]
-* Removed 'Extensions' part from namespace for ObjectChecks and DateTimeChecks
-+ It's possible to set parameter's name that's used when creating exception
+* Removed 'Extensions' part from namespace for ObjectChecks and DateTimeChecks.
++ It's possible to set parameter's name that's used when creating exception.

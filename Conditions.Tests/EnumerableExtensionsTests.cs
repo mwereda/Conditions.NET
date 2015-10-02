@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Shouldly;
 using Xunit;
 
@@ -21,6 +22,54 @@ namespace Conditions.Tests
             var list = new List<DummyClass> { new DummyClass() };
 
             list.IsEmpty().ShouldBe(false);
+        }
+
+        [Fact]
+        public void IsNullOrEmpty_NullList_ReturnsTrue()
+        {
+            List<DummyClass> nullList = null;
+
+            nullList.IsNullOrEmpty().ShouldBe(true);
+        }
+
+        [Fact]
+        public void IsNullOrEmpty_EmptyList_ReturnsTrue()
+        {
+            var emptyList = Enumerable.Empty<DummyClass>();
+
+            emptyList.IsNullOrEmpty().ShouldBe(true);
+        }
+
+        [Fact]
+        public void IsNullOrEmpty_NotNullOrEmptyList_ReturnsFalse()
+        {
+            var emptyList = new List<DummyClass> { new DummyClass() };
+
+            emptyList.IsNullOrEmpty().ShouldBe(false);
+        }
+
+        [Fact]
+        public void IsNotNullOrEmpty_NullList_ReturnsFalse()
+        {
+            List<DummyClass> nullList = null;
+
+            nullList.IsNotNullOrEmpty().ShouldBe(false);
+        }
+
+        [Fact]
+        public void IsNotNullOrEmpty_EmptyList_ReturnsFalse()
+        {
+            var emptyList = Enumerable.Empty<DummyClass>();
+
+            emptyList.IsNotNullOrEmpty().ShouldBe(false);
+        }
+
+        [Fact]
+        public void IsNotNullOrEmpty_NotNullOrEmptyList_ReturnsTrue()
+        {
+            var emptyList = new List<DummyClass> { new DummyClass() };
+
+            emptyList.IsNotNullOrEmpty().ShouldBe(true);
         }
 
         [Fact]

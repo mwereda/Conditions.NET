@@ -15,6 +15,24 @@ namespace Conditions
         }
 
         /// <summary>
+        /// Checks if collection (IEnumerable) is null or empty.
+        /// </summary>        
+        /// <returns>Boolean value whether collection is null or empty.</returns>
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> collection)
+        {
+            return collection == null || collection.IsEmpty();
+        }
+
+        /// <summary>
+        /// Checks if collection (IEnumerable) is not null or empty.
+        /// </summary>        
+        /// <returns>Boolean value whether collection is not null or empty.</returns>
+        public static bool IsNotNullOrEmpty<T>(this IEnumerable<T> collection)
+        {
+            return !collection.IsNullOrEmpty();
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) has only one item.
         /// </summary>        
         /// <returns>Boolean value whether collection has only one item.</returns>

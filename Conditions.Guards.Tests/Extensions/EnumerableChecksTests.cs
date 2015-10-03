@@ -168,6 +168,422 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
+        public void IsNullOrEmptyList_NotEmptyCollection_ThrowArgumentException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyIList_NotEmptyCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyIEnumerable_NotEmptyCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyICollection_NotEmptyCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyList_NotEmptyCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyIList_NotEmptyCollectionDivideByZeroExceptionConfigured_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail<DivideByZeroException>().If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyIEnumerable_NotEmptyCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyICollection_NotEmptyCollectionInvalidCastExceptionConfigured_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail<InvalidCastException>().If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyList_NotEmptyCollectionDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            var list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyIList_NotEmptyCollectionDivideByZeroExceptionConfiguredWithFactory_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail(() => new DivideByZeroException()).If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyIEnumerable_NotEmptyCollectionInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNullOrEmptyICollection_NotEmptyCollectionInvalidCastExceptionConfiguredWithFactory_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass> { new DummyClass() };
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail(() => new InvalidCastException()).If(list).IsNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_EmptyCollection_ThrowArgumentException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_NullCollection_ThrowArgumentException()
+        {
+            List<DummyClass> list = null;
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_EmptyCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_NullCollection_ThrowArgumentException()
+        {
+            IList<DummyClass> list = null;
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_EmptyCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_NullCollection_ThrowArgumentException()
+        {
+            IEnumerable<DummyClass> list = null;
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_EmptyCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_NullCollection_ThrowArgumentException()
+        {
+            ICollection<DummyClass> list = null;
+
+            Should.Throw<ArgumentException>(() => Check.If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_EmptyCollectionDummyExceptionConfiguredObsolete_ThrowDummyException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_EmptyCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_NullCollectionDummyExceptionConfiguredObsolete_ThrowDummyException()
+        {
+            List<DummyClass> list = null;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_NullCollectionDummyExceptionConfigured_ThrowDummyException()
+        {
+            List<DummyClass> list = null;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_EmptyCollectionDivideByZeroExceptionConfiguredObsolete_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail<DivideByZeroException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_EmptyCollectionDivideByZeroExceptionConfigured_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFails<DivideByZeroException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_NullCollectionDivideByZeroExceptionConfiguredObsolete_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = null;
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail<DivideByZeroException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_NullCollectionDivideByZeroExceptionConfigured_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = null;
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFails<DivideByZeroException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_EmptyCollectionInvalidOperationExceptionConfiguredObsolete_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_EmptyCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_NullCollectionInvalidOperationExceptionConfiguredObsolete_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = null;
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_NullCollectionInvalidOperationExceptionConfigured_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = null;
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_EmptyCollectionInvalidCastExceptionConfiguredObsolete_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail<InvalidCastException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_EmptyCollectionInvalidCastExceptionConfigured_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFails<InvalidCastException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_NullCollectionInvalidCastExceptionConfiguredObsolete_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = null;
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail<InvalidCastException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_NullCollectionInvalidCastExceptionConfigured_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = null;
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFails<InvalidCastException>().If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_EmptyCollectionDummyExceptionConfiguredWithFactoryObsolete_ThrowDummyException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_EmptyCollectionDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            var list = new List<DummyClass>();
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_NullCollectionDummyExceptionConfiguredWithFactoryObsolete_ThrowDummyException()
+        {
+            List<DummyClass> list = null;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyList_NullCollectionDummyExceptionConfiguredWithFactory_ThrowDummyException()
+        {
+            List<DummyClass> list = null;
+
+            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails(() => new DummyException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_EmptyCollectionDivideByZeroExceptionConfiguredWithFactoryObsolete_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail(() => new DivideByZeroException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_EmptyCollectionDivideByZeroExceptionConfiguredWithFactory_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFails(() => new DivideByZeroException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_NullCollectionDivideByZeroExceptionConfiguredWithFactoryObsolete_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = null;
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFail(() => new DivideByZeroException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIList_NullCollectionDivideByZeroExceptionConfiguredWithFactory_ThrowDividedByZeroException()
+        {
+            IList<DummyClass> list = null;
+
+            Should.Throw<DivideByZeroException>(() => Check.AndThrowThisWhenFails(() => new DivideByZeroException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_EmptyCollectionInvalidOperationExceptionConfiguredWithFactoryObsolete_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_EmptyCollectionInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_NullCollectionInvalidOperationExceptionConfiguredWithFactoryObsolete_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = null;
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyIEnumerable_NullCollectionInvalidOperationExceptionConfiguredWithFactory_ThrowInvalidOperationException()
+        {
+            IEnumerable<DummyClass> list = null;
+
+            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_EmptyCollectionInvalidCastExceptionConfiguredWithFactoryObsolete_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail(() => new InvalidCastException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_EmptyCollectionInvalidCastExceptionConfiguredWithFactory_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = new List<DummyClass>();
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFails(() => new InvalidCastException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_NullCollectionInvalidCastExceptionConfiguredWithFactoryObsolete_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = null;
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail(() => new InvalidCastException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
+        public void IsNotNullOrEmptyICollection_NullCollectionInvalidCastExceptionConfiguredWithFactory_ThrowInvalidCastException()
+        {
+            ICollection<DummyClass> list = null;
+
+            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFails(() => new InvalidCastException()).If(list).IsNotNullOrEmpty());
+        }
+
+        [Fact]
         public void HasExactlyOneItemList_EmptyCollection_ThrowArgumentException()
         {
             var list = new List<DummyClass>();

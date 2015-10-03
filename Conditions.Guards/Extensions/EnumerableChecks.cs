@@ -135,6 +135,135 @@ namespace Conditions.Guards
         }
 
         /// <summary>
+        /// Guards against not null or empty collections.
+        /// </summary> 
+        public static void IsNullOrEmpty<T>(this If<List<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
+        /// Guards against not null or empty collections.
+        /// </summary> 
+        public static void IsNullOrEmpty<T>(this If<IList<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
+        /// Guards against not null or empty collections.
+        /// </summary> 
+        public static void IsNullOrEmpty<T>(this If<IEnumerable<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
+        /// Guards against not null or empty collections.
+        /// </summary> 
+        public static void IsNullOrEmpty<T>(this If<ICollection<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+
+        /// <summary>
+        /// Guards against null or empty collections.
+        /// </summary> 
+        public static void IsNotNullOrEmpty<T>(this If<List<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNotNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
+        /// Guards against null or empty collections.
+        /// </summary> 
+        public static void IsNotNullOrEmpty<T>(this If<IList<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNotNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
+        /// Guards against null or empty collections.
+        /// </summary> 
+        public static void IsNotNullOrEmpty<T>(this If<IEnumerable<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNotNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
+        /// Guards against null or empty collections.
+        /// </summary> 
+        public static void IsNotNullOrEmpty<T>(this If<ICollection<T>> ifObject)
+        {
+            if (!ifObject.Value.IsNotNullOrEmpty())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
         /// Guards against collections that don't have exactly one item.
         /// </summary> 
         public static void HasExactlyOneItem<T>(this If<List<T>> ifObject)

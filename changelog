@@ -1,4 +1,7 @@
 [Conditions.NET]
+Version 1.3.0 [not released yet]
++ IsPositive and IsNegative conditions for numerics.
+
 Version 1.2.0 [15/10/2015]
 + IsNullOrEmpty and IsNotNullOrEmpty conditions for enumerables.
 

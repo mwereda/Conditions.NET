@@ -58,5 +58,25 @@ namespace Conditions
         {
             return value.IsGreaterOrEqual(minValue) && value.IsLowerOrEqual(maxValue);
         }
+
+        /// <summary>
+        /// Checks if value is positive.
+        /// </summary>        
+        /// <param name="value">Given value.</param>
+        /// <returns>Boolean valie whether variable is positive number.</returns>
+        public static bool IsPositive<T>(this T value) where T : struct, IComparable<T>
+        {
+            return value.CompareTo(default(T)).Equals(Greater);
+        }
+
+        /// <summary>
+        /// Checks if value is negative.
+        /// </summary>        
+        /// <param name="value">Given value.</param>
+        /// <returns>Boolean valie whether variable is negative number.</returns>
+        public static bool IsNegative<T>(this T value) where T : struct, IComparable<T>
+        {
+            return value.CompareTo(default(T)).Equals(Lower);
+        }
     }
 }

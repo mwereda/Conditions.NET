@@ -153,5 +153,127 @@ namespace Conditions.Tests
         {
             value.IsBetween(minValue, maxValue).ShouldBe(true);
         }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(21)]
+        [InlineData(112)]
+        [InlineData(331)]
+        public void IsPositive_GivenPositiveInteger_ReturnsTrue(int value)
+        {
+            value.IsPositive().ShouldBe(true);
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(-21)]
+        [InlineData(-2)]
+        [InlineData(-331)]
+        [InlineData(0)]
+        public void IsPositive_GivenNegativeOrZeroInteger_ReturnsFalse(int value)
+        {
+            value.IsPositive().ShouldBe(false);
+        }
+
+        [Theory]
+        [InlineData(1.0)]
+        [InlineData(0.1)]
+        [InlineData(2.43)]        
+        public void IsPositive_GivenPositiveDouble_ReturnsTrue(double value)
+        {
+            value.IsPositive().ShouldBe(true);
+        }
+
+        [Theory]
+        [InlineData(-1.1)]
+        [InlineData(-21.2)]
+        [InlineData(-0.1)]
+        [InlineData(-331.2)]
+        [InlineData(0.0)]
+        public void IsPositive_GivenNegativeOrZeroDouble_ReturnsFalse(double value)
+        {
+            value.IsPositive().ShouldBe(false);
+        }
+
+        [Theory]
+        [InlineData(1.0)]
+        [InlineData(0.1)]
+        [InlineData(2.43)]
+        public void IsPositive_GivenPositiveDecimal_ReturnsTrue(decimal value)
+        {
+            value.IsPositive().ShouldBe(true);
+        }
+
+        [Theory]
+        [InlineData(-1.1)]
+        [InlineData(-21.2)]
+        [InlineData(-0.1)]
+        [InlineData(-331.2)]
+        [InlineData(0.0)]
+        public void IsPositive_GivenNegativeOrZeroDecimal_ReturnsFalse(decimal value)
+        {
+            value.IsPositive().ShouldBe(false);
+        }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(21)]
+        [InlineData(112)]
+        [InlineData(331)]
+        [InlineData(0)]
+        public void IsNegative_GivenPositiveOrZeroInteger_ReturnsFalse(int value)
+        {
+            value.IsNegative().ShouldBe(false);
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(-21)]
+        [InlineData(-2)]
+        [InlineData(-331)]
+        public void IsNegative_GivenNegativeInteger_ReturnsTrue(int value)
+        {
+            value.IsNegative().ShouldBe(true);
+        }
+
+        [Theory]
+        [InlineData(1.0)]
+        [InlineData(0.1)]
+        [InlineData(2.43)]
+        [InlineData(0.0)]
+        public void IsNegative_GivenPositiveOrZeroDouble_ReturnsFalse(double value)
+        {
+            value.IsNegative().ShouldBe(false);
+        }
+
+        [Theory]
+        [InlineData(-1.1)]
+        [InlineData(-21.2)]
+        [InlineData(-0.1)]
+        [InlineData(-331.2)]
+        public void IsNegative_GivenNegativeOrZeroDouble_ReturnsTrue(double value)
+        {
+            value.IsNegative().ShouldBe(true);
+        }
+
+        [Theory]
+        [InlineData(1.0)]
+        [InlineData(0.1)]
+        [InlineData(2.43)]
+        [InlineData(0.0)]
+        public void IsNegative_GivenPositiveOrZeroDecimal_ReturnsFalse(decimal value)
+        {
+            value.IsNegative().ShouldBe(false);
+        }
+
+        [Theory]
+        [InlineData(-1.1)]
+        [InlineData(-21.2)]
+        [InlineData(-0.1)]
+        [InlineData(-331.2)]
+        public void IsNegative_GivenNegative_ReturnsTrue(decimal value)
+        {
+            value.IsNegative().ShouldBe(true);
+        }
     }
 }

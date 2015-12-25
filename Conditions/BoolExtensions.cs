@@ -7,7 +7,7 @@ namespace Conditions
         /// <summary>
         /// Checks if boolean value is true.
         /// </summary>        
-        /// <returns>Boolean value whether boolean value is true.</returns>
+        /// <returns>Boolean value indicating if boolean value is true.</returns>
         public static bool IsTrue(this Boolean value)
         {
             return value.Equals(true);
@@ -16,7 +16,7 @@ namespace Conditions
         /// <summary>
         /// Checks if boolean value is false.
         /// </summary>        
-        /// <returns>Boolean value whether boolean value is false.</returns>
+        /// <returns>Boolean value indicating if boolean value is false.</returns>
         public static bool IsFalse(this Boolean value)
         {
             return value.Equals(false);

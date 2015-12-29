@@ -9,9 +9,9 @@ namespace Conditions
         /// </summary>        
         /// <param name="referenceDateTime">Reference date time.</param>
         /// <returns>Boolean value indicating if date time is greater than reference date time.</returns>
-        public static bool IsGreaterThan(this DateTime dateTime, DateTime referenceDateTime)
+        public static ConditionResult IsGreaterThan(this DateTime dateTime, DateTime referenceDateTime)
         {
-            return dateTime > referenceDateTime;
+            return ConditionResult.Create(dateTime > referenceDateTime);
         }
     }
 }

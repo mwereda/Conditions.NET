@@ -12,7 +12,7 @@ namespace Conditions.Tests
         [InlineData(23, 22)]
         public void IsGreaterThan_IntValueGreaterThanGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            value.IsGreaterThan(givenValue).ShouldBe(true);
+            value.IsGreaterThan(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -21,7 +21,7 @@ namespace Conditions.Tests
         [InlineData(23, 24)]
         public void IsGreaterThan_IntValueLowerThanGivenValue_ReturnsFalse(int value, int givenValue)
         {
-            value.IsGreaterThan(givenValue).ShouldBe(false);
+            value.IsGreaterThan(givenValue).Result.ShouldBe(false);
         }
 
         [Theory]
@@ -30,7 +30,7 @@ namespace Conditions.Tests
         [InlineData(23, 22)]
         public void IsGreaterOrEqual_IntValueGreaterThanGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
+            value.IsGreaterOrEqual(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -39,7 +39,7 @@ namespace Conditions.Tests
         [InlineData(23, 24)]
         public void IsGreaterOrEqual_IntValueLowerThanGivenValue_ReturnsFalse(int value, int givenValue)
         {
-            value.IsGreaterOrEqual(givenValue).ShouldBe(false);
+            value.IsGreaterOrEqual(givenValue).Result.ShouldBe(false);
         }
 
         [Theory]
@@ -48,7 +48,7 @@ namespace Conditions.Tests
         [InlineData(233, 233)]
         public void IsGreaterOrEqual_IntValueEqualsGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
+            value.IsGreaterOrEqual(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -58,7 +58,7 @@ namespace Conditions.Tests
         [InlineData(23.3, 23.29)]
         public void IsGreaterThan_DecimalValueGreaterThanGivenValue_ReturnsTrue(decimal value, decimal givenValue)
         {
-            value.IsGreaterThan(givenValue).ShouldBe(true);
+            value.IsGreaterThan(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -67,7 +67,7 @@ namespace Conditions.Tests
         [InlineData(23.2, 24.2)]
         public void IsGreaterThan_DecimalValueLowerThanGivenValue_ReturnsFalse(decimal value, decimal givenValue)
         {
-            value.IsGreaterThan(givenValue).ShouldBe(false);
+            value.IsGreaterThan(givenValue).Result.ShouldBe(false);
         }
 
         [Theory]
@@ -76,7 +76,7 @@ namespace Conditions.Tests
         [InlineData(23.2, 22.2)]
         public void IsGreaterOrEqual_DecimalValueGreaterThanGivenValue_ReturnsTrue(decimal value, decimal givenValue)
         {
-            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
+            value.IsGreaterOrEqual(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -85,7 +85,7 @@ namespace Conditions.Tests
         [InlineData(23.3, 24.3)]
         public void IsGreaterOrEqual_DecimalValueLowerThanGivenValue_ReturnsFalse(decimal value, decimal givenValue)
         {
-            value.IsGreaterOrEqual(givenValue).ShouldBe(false);
+            value.IsGreaterOrEqual(givenValue).Result.ShouldBe(false);
         }
 
         [Theory]
@@ -94,7 +94,7 @@ namespace Conditions.Tests
         [InlineData(2.33, 2.33)]
         public void IsGreaterOrEqual_DecimalValueEqualsGivenValue_ReturnsTrue(decimal value, decimal givenValue)
         {
-            value.IsGreaterOrEqual(givenValue).ShouldBe(true);
+            value.IsGreaterOrEqual(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -103,7 +103,7 @@ namespace Conditions.Tests
         [InlineData(22, 23)]
         public void IsLowerThan_IntValueLowerThanGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            value.IsLowerThan(givenValue).ShouldBe(true);
+            value.IsLowerThan(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -112,7 +112,7 @@ namespace Conditions.Tests
         [InlineData(24, 23)]
         public void IsLowerOrEqual_IntValueGreaterThanGivenValue_ReturnsFalse(int value, int givenValue)
         {
-            value.IsLowerOrEqual(givenValue).ShouldBe(false);
+            value.IsLowerOrEqual(givenValue).Result.ShouldBe(false);
         }
 
         [Theory]
@@ -121,7 +121,7 @@ namespace Conditions.Tests
         [InlineData(233, 233)]
         public void IsLowerOrEqual_IntValueEqualsGivenValue_ReturnsTrue(int value, int givenValue)
         {
-            value.IsLowerOrEqual(givenValue).ShouldBe(true);
+            value.IsLowerOrEqual(givenValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -131,7 +131,7 @@ namespace Conditions.Tests
         [InlineData(20, 2, 300)]
         public void IsBetween_ValueBetweenGivenRange_ReturnsTrue(int value, int minValue, int maxValue)
         {
-            value.IsBetween(minValue, maxValue).ShouldBe(true);
+            value.IsBetween(minValue, maxValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -139,7 +139,7 @@ namespace Conditions.Tests
         [InlineData(12, 13, 23)]
         public void IsBetween_ValueIsNotBetweenGivenRange_ReturnsFalse(int value, int minValue, int maxValue)
         {
-            value.IsBetween(minValue, maxValue).ShouldBe(false);
+            value.IsBetween(minValue, maxValue).Result.ShouldBe(false);
         }
 
         [Theory]
@@ -151,7 +151,7 @@ namespace Conditions.Tests
         [InlineData(2.99, 2.0, 3.0)]
         public void IsBetween_DecimalValueBetweenGivenRange_ReturnsTrue(decimal value, decimal minValue, decimal maxValue)
         {
-            value.IsBetween(minValue, maxValue).ShouldBe(true);
+            value.IsBetween(minValue, maxValue).Result.ShouldBe(true);
         }
 
         [Theory]
@@ -161,7 +161,7 @@ namespace Conditions.Tests
         [InlineData(331)]
         public void IsPositive_GivenPositiveInteger_ReturnsTrue(int value)
         {
-            value.IsPositive().ShouldBe(true);
+            value.IsPositive().Result.ShouldBe(true);
         }
 
         [Theory]
@@ -172,7 +172,7 @@ namespace Conditions.Tests
         [InlineData(0)]
         public void IsPositive_GivenNegativeOrZeroInteger_ReturnsFalse(int value)
         {
-            value.IsPositive().ShouldBe(false);
+            value.IsPositive().Result.ShouldBe(false);
         }
 
         [Theory]
@@ -181,7 +181,7 @@ namespace Conditions.Tests
         [InlineData(2.43)]        
         public void IsPositive_GivenPositiveDouble_ReturnsTrue(double value)
         {
-            value.IsPositive().ShouldBe(true);
+            value.IsPositive().Result.ShouldBe(true);
         }
 
         [Theory]
@@ -192,7 +192,7 @@ namespace Conditions.Tests
         [InlineData(0.0)]
         public void IsPositive_GivenNegativeOrZeroDouble_ReturnsFalse(double value)
         {
-            value.IsPositive().ShouldBe(false);
+            value.IsPositive().Result.ShouldBe(false);
         }
 
         [Theory]
@@ -201,7 +201,7 @@ namespace Conditions.Tests
         [InlineData(2.43)]
         public void IsPositive_GivenPositiveDecimal_ReturnsTrue(decimal value)
         {
-            value.IsPositive().ShouldBe(true);
+            value.IsPositive().Result.ShouldBe(true);
         }
 
         [Theory]
@@ -212,7 +212,7 @@ namespace Conditions.Tests
         [InlineData(0.0)]
         public void IsPositive_GivenNegativeOrZeroDecimal_ReturnsFalse(decimal value)
         {
-            value.IsPositive().ShouldBe(false);
+            value.IsPositive().Result.ShouldBe(false);
         }
 
         [Theory]
@@ -223,7 +223,7 @@ namespace Conditions.Tests
         [InlineData(0)]
         public void IsNegative_GivenPositiveOrZeroInteger_ReturnsFalse(int value)
         {
-            value.IsNegative().ShouldBe(false);
+            value.IsNegative().Result.ShouldBe(false);
         }
 
         [Theory]
@@ -233,7 +233,7 @@ namespace Conditions.Tests
         [InlineData(-331)]
         public void IsNegative_GivenNegativeInteger_ReturnsTrue(int value)
         {
-            value.IsNegative().ShouldBe(true);
+            value.IsNegative().Result.ShouldBe(true);
         }
 
         [Theory]
@@ -243,7 +243,7 @@ namespace Conditions.Tests
         [InlineData(0.0)]
         public void IsNegative_GivenPositiveOrZeroDouble_ReturnsFalse(double value)
         {
-            value.IsNegative().ShouldBe(false);
+            value.IsNegative().Result.ShouldBe(false);
         }
 
         [Theory]
@@ -253,7 +253,7 @@ namespace Conditions.Tests
         [InlineData(-331.2)]
         public void IsNegative_GivenNegativeOrZeroDouble_ReturnsTrue(double value)
         {
-            value.IsNegative().ShouldBe(true);
+            value.IsNegative().Result.ShouldBe(true);
         }
 
         [Theory]
@@ -263,7 +263,7 @@ namespace Conditions.Tests
         [InlineData(0.0)]
         public void IsNegative_GivenPositiveOrZeroDecimal_ReturnsFalse(decimal value)
         {
-            value.IsNegative().ShouldBe(false);
+            value.IsNegative().Result.ShouldBe(false);
         }
 
         [Theory]
@@ -273,7 +273,7 @@ namespace Conditions.Tests
         [InlineData(-331.2)]
         public void IsNegative_GivenNegative_ReturnsTrue(decimal value)
         {
-            value.IsNegative().ShouldBe(true);
+            value.IsNegative().Result.ShouldBe(true);
         }
     }
 }

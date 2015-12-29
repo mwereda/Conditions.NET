@@ -8,18 +8,18 @@ namespace Conditions
         /// Checks if object is null.
         /// </summary>        
         /// <returns>Boolean value indicating if object is null.</returns>
-        public static bool IsNull(this Object @object)
+        public static ConditionResult IsNull(this Object @object)
         {
-            return @object == null;
+            return ConditionResult.Create(@object == null);
         }
 
         /// <summary>
         /// Checks if object is not null.
         /// </summary>        
         /// <returns>Boolean value indicating if object is not null.</returns>
-        public static bool IsNotNull(this Object @object)
+        public static ConditionResult IsNotNull(this Object @object)
         {
-            return !IsNull(@object);
+            return ConditionResult.Create(!IsNull(@object));
         }
     }
 }

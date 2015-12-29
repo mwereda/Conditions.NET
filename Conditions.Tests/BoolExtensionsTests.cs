@@ -10,7 +10,7 @@ namespace Conditions.Tests
         {
             var trueValue = true;
 
-            trueValue.IsTrue().ShouldBe(true);
+            trueValue.IsTrue().Result.ShouldBe(true);
         }
 
         [Fact]
@@ -18,7 +18,7 @@ namespace Conditions.Tests
         {
             var trueValue = false;
 
-            trueValue.IsTrue().ShouldBe(false);
+            trueValue.IsTrue().Result.ShouldBe(false);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace Conditions.Tests
         {
             var trueValue = true;
 
-            trueValue.IsFalse().ShouldBe(false);
+            trueValue.IsFalse().Result.ShouldBe(false);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Conditions.Tests
         {
             var trueValue = false;
 
-            trueValue.IsFalse().ShouldBe(true);
+            trueValue.IsFalse().Result.ShouldBe(true);
         }
     }
 }

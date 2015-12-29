@@ -10,7 +10,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy = null;
 
-            dummy.IsNull().ShouldBe(true);
+            dummy.IsNull().Result.ShouldBe(true);
         }
 
         [Fact]
@@ -18,7 +18,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy = new DummyClass();
 
-            dummy.IsNull().ShouldBe(false);
+            dummy.IsNull().Result.ShouldBe(false);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy = null;
 
-            dummy.IsNotNull().ShouldBe(false);
+            dummy.IsNotNull().Result.ShouldBe(false);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Conditions.Tests
         {
             DummyClass dummy = new DummyClass();
 
-            dummy.IsNotNull().ShouldBe(true);
+            dummy.IsNotNull().Result.ShouldBe(true);
         }
     }
 }

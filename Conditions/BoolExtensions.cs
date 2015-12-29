@@ -8,18 +8,18 @@ namespace Conditions
         /// Checks if boolean value is true.
         /// </summary>        
         /// <returns>Boolean value indicating if boolean value is true.</returns>
-        public static bool IsTrue(this Boolean value)
+        public static ConditionResult IsTrue(this Boolean value)
         {
-            return value.Equals(true);
+            return ConditionResult.Create(value.Equals(true));
         }
 
         /// <summary>
         /// Checks if boolean value is false.
         /// </summary>        
         /// <returns>Boolean value indicating if boolean value is false.</returns>
-        public static bool IsFalse(this Boolean value)
+        public static ConditionResult IsFalse(this Boolean value)
         {
-            return value.Equals(false);
+            return ConditionResult.Create(value.Equals(false));
         }
     }
 }

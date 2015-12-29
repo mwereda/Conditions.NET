@@ -11,9 +11,9 @@ namespace Conditions.Tests
         {
             var currentDateTime = DateTime.Now;
 
-            currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(1)).ShouldBe(false);
-            currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(1)).ShouldBe(false);
-            currentDateTime.IsGreaterThan(currentDateTime.AddHours(1)).ShouldBe(false);
+            currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(1)).Result.ShouldBe(false);
+            currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(1)).Result.ShouldBe(false);
+            currentDateTime.IsGreaterThan(currentDateTime.AddHours(1)).Result.ShouldBe(false);
         }
 
         [Fact]
@@ -21,9 +21,9 @@ namespace Conditions.Tests
         {
             var currentDateTime = DateTime.Now;
 
-            currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(-1)).ShouldBe(true);
-            currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(-1)).ShouldBe(true);
-            currentDateTime.IsGreaterThan(currentDateTime.AddHours(-1)).ShouldBe(true);
+            currentDateTime.IsGreaterThan(currentDateTime.AddSeconds(-1)).Result.ShouldBe(true);
+            currentDateTime.IsGreaterThan(currentDateTime.AddMinutes(-1)).Result.ShouldBe(true);
+            currentDateTime.IsGreaterThan(currentDateTime.AddHours(-1)).Result.ShouldBe(true);
         }
 
         [Fact]
@@ -31,7 +31,7 @@ namespace Conditions.Tests
         {
             var currentDateTime = DateTime.Now;
 
-            currentDateTime.IsGreaterThan(currentDateTime).ShouldBe(false);
+            currentDateTime.IsGreaterThan(currentDateTime).Result.ShouldBe(false);
         }
     }
 }

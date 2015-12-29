@@ -490,5 +490,76 @@ namespace Conditions.Guards.Tests.Extensions
 
             Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails(() => new InvalidOperationException()).If(value).IsBetween(minimalValue, maximalValue));
         }
+
+        [Theory]
+        [InlineData(-31)]
+        [InlineData(-10)]
+        [InlineData(0)]
+        public void IsPositive_IntValueIsZeroOrNegative_ThrowsArgumentException(int givenValue)
+        {
+            Should.Throw<ArgumentException>(() => Check.If(givenValue).IsPositive());
+        }
+
+        [Theory]
+        [InlineData(-31)]
+        [InlineData(-10)]
+        [InlineData(0)]
+        public void IsPositive_IntValueIsZeroOrNegativeArgumentNullExceptionConfiguredObsolete_ThrowsArgumentNullException(int givenValue)
+        {
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail<ArgumentNullException>().If(givenValue).IsPositive());
+        }
+
+        [Theory]
+        [InlineData(-31)]
+        [InlineData(-10)]
+        [InlineData(0)]
+        public void IsPositive_IntValueIsZeroOrNegativeArgumentNullExceptionConfigured_ThrowsArgumentNullException(int givenValue)
+        {
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFails<ArgumentNullException>().If(givenValue).IsPositive());
+        }
+
+        [Theory]
+        [InlineData(31)]
+        [InlineData(10)]
+        public void IsPositive_IntValueIsPositive_DoesNotThrowException(int givenValue)
+        {
+            Should.NotThrow(() => Check.If(givenValue).IsPositive());
+        }
+
+
+        [Theory]
+        [InlineData(31)]
+        [InlineData(10)]
+        [InlineData(0)]
+        public void IsNegative_IntValueIsZeroOrPositive_ThrowsArgumentException(int givenValue)
+        {
+            Should.Throw<ArgumentException>(() => Check.If(givenValue).IsNegative());
+        }
+
+        [Theory]
+        [InlineData(31)]
+        [InlineData(10)]
+        [InlineData(0)]
+        public void IsNegative_IntValueIsZeroOrPositiveArgumentNullExceptionConfiguredObsolete_ThrowsArgumentNullException(int givenValue)
+        {
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFail<ArgumentNullException>().If(givenValue).IsNegative());
+        }
+
+        [Theory]
+        [InlineData(31)]
+        [InlineData(10)]
+        [InlineData(0)]
+        public void IsNegative_IntValueIsZeroOrPositiveArgumentNullExceptionConfigured_ThrowsArgumentNullException(int givenValue)
+        {
+            Should.Throw<ArgumentNullException>(() => Check.AndThrowThisWhenFails<ArgumentNullException>().If(givenValue).IsNegative());
+        }
+
+        [Theory]
+        [InlineData(-31)]
+        [InlineData(-10)]
+        public void IsNegative_IntValueIsNegative_DoesNotThrowException(int givenValue)
+        {
+            Should.NotThrow(() => Check.If(givenValue).IsNegative());
+        }
     }
 }

@@ -96,5 +96,39 @@ namespace Conditions.Guards
                 ifObject.ExceptionConfiguration.Throw();
             }
         }
+
+        /// <summary>
+        /// Guards against values that are not positive.
+        /// </summary>                
+        public static void IsPositive<T>(this If<T> ifObject) where T : struct, IComparable<T>
+        {
+            if (!ifObject.Value.IsPositive())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("Value should be positive"),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
+
+        /// <summary>
+        /// Guards against values that are not negative.
+        /// </summary>                
+        public static void IsNegative<T>(this If<T> ifObject) where T : struct, IComparable<T>
+        {
+            if (!ifObject.Value.IsNegative())
+            {
+                if (!ifObject.ExceptionConfiguration.ExceptionOverriden)
+                {
+                    ifObject.ExceptionConfiguration.ThrowsException(() => new ArgumentException(string.Format("Value should be positive"),
+                        ifObject.ParamName));
+                }
+
+                ifObject.ExceptionConfiguration.Throw();
+            }
+        }
     }
 }

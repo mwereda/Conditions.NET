@@ -1,7 +1,12 @@
 ﻿namespace Conditions
 {
-    public class ConditionResult
+    public class ConditionResult<T>
     {    
+        public T And
+        {
+            get;
+        }
+
         internal bool Result
         {
             get; private set;
@@ -11,13 +16,13 @@
         {
             Result = result;            
         }
-
-        internal static ConditionResult Create(bool result)
+        
+        internal static ConditionResult<T> Create(bool result)
         {
-            return new ConditionResult(result);
+            return new ConditionResult<T>(result);
         }
 
-        public static implicit operator bool(ConditionResult conditionResult)
+        public static implicit operator bool(ConditionResult<T> conditionResult)
         {
             return conditionResult.Result;
         }

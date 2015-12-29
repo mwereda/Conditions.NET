@@ -1,6 +1,6 @@
 ﻿namespace Conditions
 {
-    public class ConditionResult<T>
+    public sealed class ConditionResult<T>
     {    
         public T And
         {

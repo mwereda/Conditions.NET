@@ -4,7 +4,7 @@
     {    
         public T And
         {
-            get;
+            get; private set;
         }
 
         internal bool Result

@@ -17,25 +17,9 @@ namespace Conditions.Guards.Tests.Extensions
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void IsNotNullOrEmpty_StringIsNullOrEmptyInvalidOperationExceptionConfiguredObsolete_ThrowsInvalidOperationException(string invalidString)
-        {
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail<InvalidOperationException>().If(invalidString).IsNotNullOrEmpty());
-        }
-
-        [Theory]
-        [InlineData(null)]
-        [InlineData("")]
         public void IsNotNullOrEmpty_StringIsNullOrEmptyInvalidOperationExceptionConfigured_ThrowsInvalidOperationException(string invalidString)
         {
             Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFails<InvalidOperationException>().If(invalidString).IsNotNullOrEmpty());
-        }
-
-        [Theory]
-        [InlineData(null)]
-        [InlineData("")]
-        public void IsNotNullOrEmpty_StringIsNullOrEmptyInvalidOperationExceptionConfiguredWithFactoryObsolete_ThrowsInvalidOperationException(string invalidString)
-        {
-            Should.Throw<InvalidOperationException>(() => Check.AndThrowThisWhenFail(() => new InvalidOperationException()).If(invalidString).IsNotNullOrEmpty());
         }
 
         [Theory]
@@ -55,27 +39,11 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsGuid_StringIsInvalidGuidDummyExceptionConfiguredObsolete_ThrowsDummyException()
-        {
-            const string invalidGuid = "1234vcxvxcv34324";
-
-            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(invalidGuid).IsGuid());
-        }
-
-        [Fact]
         public void IsGuid_StringIsInvalidGuidDummyExceptionConfigured_ThrowsDummyException()
         {
             const string invalidGuid = "1234vcxvxcv34324";
 
             Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(invalidGuid).IsGuid());
-        }
-
-        [Fact]
-        public void IsGuid_StringIsInvalidGuidDummyExceptionConfiguredWithFactoryObsolete_ThrowsDummyException()
-        {
-            const string invalidGuid = "1234vcxvxcv34324";
-
-            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(invalidGuid).IsGuid());
         }
 
         [Fact]
@@ -95,27 +63,11 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void IsEmailAddress_StringIsInvalidEmailAddressNullReferenceExceptionConfiguredObsolete_ThrowsNullReferenceException()
-        {
-            const string invalidEmailAddress = "mail.example.com";
-
-            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail<NullReferenceException>().If(invalidEmailAddress).IsEmailAddress());
-        }
-
-        [Fact]
         public void IsEmailAddress_StringIsInvalidEmailAddressNullReferenceExceptionConfigured_ThrowsNullReferenceException()
         {
             const string invalidEmailAddress = "mail.example.com";
 
             Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFails<NullReferenceException>().If(invalidEmailAddress).IsEmailAddress());
-        }
-
-        [Fact]
-        public void IsEmailAddress_StringIsInvalidEmailAddressNullReferenceExceptionConfiguredWithFactoryObsolete_ThrowsNullReferenceException()
-        {
-            const string invalidEmailAddress = "mail.example.com";
-
-            Should.Throw<NullReferenceException>(() => Check.AndThrowThisWhenFail(() => new NullReferenceException()).If(invalidEmailAddress).IsEmailAddress());
         }
 
         [Fact]
@@ -136,30 +88,12 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void HasLength_StringHasNotExpectedLengthInvalidCastExceptionConfiguredObsolete_ThrowsInvalidCastException()
-        {
-            const string sampleString = "sample";
-            const int expectedLength = 3;
-
-            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail<InvalidCastException>().If(sampleString).HasLength(expectedLength));
-        }
-
-        [Fact]
         public void HasLength_StringHasNotExpectedLengthInvalidCastExceptionConfigured_ThrowsInvalidCastException()
         {
             const string sampleString = "sample";
             const int expectedLength = 3;
 
             Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFails<InvalidCastException>().If(sampleString).HasLength(expectedLength));
-        }
-
-        [Fact]
-        public void HasLength_StringHasNotExpectedLengthInvalidCastExceptionConfiguredWithFactoryObsolete_ThrowsInvalidCastException()
-        {
-            const string sampleString = "sample";
-            const int expectedLength = 3;
-
-            Should.Throw<InvalidCastException>(() => Check.AndThrowThisWhenFail(() => new InvalidCastException()).If(sampleString).HasLength(expectedLength));
         }
 
         [Fact]
@@ -181,30 +115,12 @@ namespace Conditions.Guards.Tests.Extensions
         }
 
         [Fact]
-        public void HasLengthAtLeast_StringShorterThanExpectedInvalidTimeZoneExceptionConfiguredObsolete_ThrowsInvalidTimeZoneException()
-        {
-            const string sampleString = "testing";
-            const int minimalLength = 10;
-
-            Should.Throw<InvalidTimeZoneException>(() => Check.AndThrowThisWhenFail<InvalidTimeZoneException>().If(sampleString).HasLengthAtLeast(minimalLength));
-        }
-
-        [Fact]
         public void HasLengthAtLeast_StringShorterThanExpectedInvalidTimeZoneExceptionConfigured_ThrowsInvalidTimeZoneException()
         {
             const string sampleString = "testing";
             const int minimalLength = 10;
 
             Should.Throw<InvalidTimeZoneException>(() => Check.AndThrowThisWhenFails<InvalidTimeZoneException>().If(sampleString).HasLengthAtLeast(minimalLength));
-        }
-
-        [Fact]
-        public void HasLengthAtLeast_StringShorterThanExpectedInvalidTimeZoneExceptionConfiguredWithFactoryObsolete_ThrowsInvalidTimeZoneException()
-        {
-            const string sampleString = "testing";
-            const int minimalLength = 10;
-
-            Should.Throw<InvalidTimeZoneException>(() => Check.AndThrowThisWhenFail(() => new InvalidTimeZoneException()).If(sampleString).HasLengthAtLeast(minimalLength));
         }
 
         [Fact]
@@ -227,27 +143,10 @@ namespace Conditions.Guards.Tests.Extensions
         [Theory]
         [InlineData("123", @"^\d$")]
         [InlineData("abc123", @"}\d{3}")]
-        public void Matches_StringDoesNotMatchPatternDummyExceptionConfiguredObsolete_ThrowsDummyException(string @string, string pattern)
-        {
-            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail<DummyException>().If(@string).Matches(pattern));
-        }
-
-        [Theory]
-        [InlineData("123", @"^\d$")]
-        [InlineData("abc123", @"}\d{3}")]
         public void Matches_StringDoesNotMatchPatternDummyExceptionConfigured_ThrowsDummyException(string @string, string pattern)
         {
             Should.Throw<DummyException>(() => Check.AndThrowThisWhenFails<DummyException>().If(@string).Matches(pattern));
         }
-
-        [Theory]
-        [InlineData("123", @"^\d$")]
-        [InlineData("abc123", @"}\d{3}")]
-        public void Matches_StringDoesNotMatchPatternDummyExceptionConfiguredWithFactoryObsolete_ThrowsDummyException(string @string, string pattern)
-        {
-            Should.Throw<DummyException>(() => Check.AndThrowThisWhenFail(() => new DummyException()).If(@string).Matches(pattern));
-        }
-
 
         [Theory]
         [InlineData("123", @"^\d$")]

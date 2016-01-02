@@ -65,6 +65,7 @@
     <Compile Include="ComplexConditionTests.cs" />
     <Compile Include="DateTimeExtensionsTests.cs" />
     <Compile Include="DummyClass.cs" />
+    <Compile Include="EnumerableAndExtensionsTests.cs" />
     <Compile Include="EnumerableExtensionsTests.cs" />
     <Compile Include="NumericAndExtensionsTests.cs" />
     <Compile Include="NumericExtensionsTests.cs" />

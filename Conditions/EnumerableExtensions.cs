@@ -15,6 +15,18 @@ namespace Conditions
         }
 
         /// <summary>
+        /// Checks if collection (IEnumerable) is empty.
+        /// </summary>        
+        /// <returns>Boolean value indicating if collection is empty.</returns>
+        public static ConditionResult<IEnumerable<T>> IsEmpty<T>(this And<IEnumerable<T>> andCondition)
+        {
+            var value = andCondition.Value;
+            var result = value.IsEmpty();
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) is null or empty.
         /// </summary>        
         /// <returns>Boolean value indicating if collection is null or empty.</returns>
@@ -24,12 +36,36 @@ namespace Conditions
         }
 
         /// <summary>
+        /// Checks if collection (IEnumerable) is null or empty.
+        /// </summary>        
+        /// <returns>Boolean value indicating if collection is null or empty.</returns>
+        public static ConditionResult<IEnumerable<T>> IsNullOrEmpty<T>(this And<IEnumerable<T>> andCondition)
+        {
+            var value = andCondition.Value;
+            var result = value.IsNullOrEmpty();
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) is not null or empty.
         /// </summary>        
         /// <returns>Boolean value indicating if collection is not null or empty.</returns>
         public static ConditionResult<IEnumerable<T>> IsNotNullOrEmpty<T>(this IEnumerable<T> collection)
         {
             return ConditionResult<IEnumerable<T>>.Create(!collection.IsNullOrEmpty(), collection);
+        }
+
+        /// <summary>
+        /// Checks if collection (IEnumerable) is not null or empty.
+        /// </summary>        
+        /// <returns>Boolean value indicating if collection is not null or empty.</returns>
+        public static ConditionResult<IEnumerable<T>> IsNotNullOrEmpty<T>(this And<IEnumerable<T>> andCondition)
+        {
+            var value = andCondition.Value;
+            var result = value.IsNotNullOrEmpty();
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
         }
 
         /// <summary>

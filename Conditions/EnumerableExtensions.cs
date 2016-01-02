@@ -78,6 +78,18 @@ namespace Conditions
         }
 
         /// <summary>
+        /// Checks if collection (IEnumerable) has only one item.
+        /// </summary>        
+        /// <returns>Boolean value indicating if collection has only one item.</returns>
+        public static ConditionResult<IEnumerable<T>> HasExactlyOneItem<T>(this And<IEnumerable<T>> andCondition)
+        {
+            var value = andCondition.Value;
+            var result = value.HasExactlyOneItem();
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) has more than one item.
         /// </summary>        
         /// <returns>Boolean value indicating if collection has more than one item.</returns>
@@ -87,12 +99,36 @@ namespace Conditions
         }
 
         /// <summary>
+        /// Checks if collection (IEnumerable) has more than one item.
+        /// </summary>        
+        /// <returns>Boolean value indicating if collection has more than one item.</returns>
+        public static ConditionResult<IEnumerable<T>> HasMoreThanOneItem<T>(this And<IEnumerable<T>> andCondition)
+        {
+            var value = andCondition.Value;
+            var result = value.HasMoreThanOneItem();
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) has at least one item.
         /// </summary>        
         /// <returns>Boolean value indicating if collection has at least one item.</returns>
         public static ConditionResult<IEnumerable<T>> HasAtLeastOneItem<T>(this IEnumerable<T> collection)
         {
             return ConditionResult<IEnumerable<T>>.Create(collection.Count() >= 1, collection);
+        }
+
+        /// <summary>
+        /// Checks if collection (IEnumerable) has at least one item.
+        /// </summary>        
+        /// <returns>Boolean value indicating if collection has at least one item.</returns>
+        public static ConditionResult<IEnumerable<T>> HasAtLeastOneItem<T>(this And<IEnumerable<T>> andCondition)
+        {
+            var value = andCondition.Value;
+            var result = value.HasAtLeastOneItem();
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
         }
 
         /// <summary>
@@ -106,6 +142,19 @@ namespace Conditions
         }
 
         /// <summary>
+        /// Checks if collection (IEnumerable) has given number of items.
+        /// </summary>        
+        /// <param name="count">Items count.</param>
+        /// <returns>Boolean value indicating if collection has given number of items.</returns>
+        public static ConditionResult<IEnumerable<T>> HasItemsCount<T>(this And<IEnumerable<T>> andCondition, int count)
+        {
+            var value = andCondition.Value;
+            var result = value.HasItemsCount(count);
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) has at least given number of items.
         /// </summary>        
         /// <param name="count">Items count.</param>
@@ -116,6 +165,19 @@ namespace Conditions
         }
 
         /// <summary>
+        /// Checks if collection (IEnumerable) has at least given number of items.
+        /// </summary>        
+        /// <param name="count">Items count.</param>
+        /// <returns>Boolean value indicating if collection has at least given number of items.</returns>
+        public static ConditionResult<IEnumerable<T>> HasItemsCountAtLeast<T>(this And<IEnumerable<T>> andCondition, int count)
+        {
+            var value = andCondition.Value;
+            var result = value.HasItemsCountAtLeast(count);
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+        }
+
+        /// <summary>
         /// Checks if collection (IEnumerable) has more items than given number.
         /// </summary>        
         /// <param name="count">Items count.</param>
@@ -123,6 +185,19 @@ namespace Conditions
         public static ConditionResult<IEnumerable<T>> HasMoreItemsThan<T>(this IEnumerable<T> collection, int count)
         {
             return ConditionResult<IEnumerable<T>>.Create(collection.Count() > count, collection);
+        }
+
+        /// <summary>
+        /// Checks if collection (IEnumerable) has more items than given number.
+        /// </summary>        
+        /// <param name="count">Items count.</param>
+        /// <returns>Boolean value indicating if collection has more items than given number.</returns>
+        public static ConditionResult<IEnumerable<T>> HasMoreItemsThan<T>(this And<IEnumerable<T>> andCondition, int count)
+        {
+            var value = andCondition.Value;
+            var result = value.HasMoreItemsThan(count);
+
+            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
         }
     }
 }

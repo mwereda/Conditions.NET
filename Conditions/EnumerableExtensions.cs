@@ -11,7 +11,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection is empty.</returns>
         public static ConditionResult<IEnumerable<T>> IsEmpty<T>(this IEnumerable<T> collection)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection.Count() == 0);
+            return ConditionResult<IEnumerable<T>>.Create(collection.Count() == 0, collection);
         }
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection is null or empty.</returns>
         public static ConditionResult<IEnumerable<T>> IsNullOrEmpty<T>(this IEnumerable<T> collection)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection == null || collection.IsEmpty());
+            return ConditionResult<IEnumerable<T>>.Create(collection == null || collection.IsEmpty(), collection);
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection is not null or empty.</returns>
         public static ConditionResult<IEnumerable<T>> IsNotNullOrEmpty<T>(this IEnumerable<T> collection)
         {
-            return ConditionResult<IEnumerable<T>>.Create(!collection.IsNullOrEmpty());
+            return ConditionResult<IEnumerable<T>>.Create(!collection.IsNullOrEmpty(), collection);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection has only one item.</returns>
         public static ConditionResult<IEnumerable<T>> HasExactlyOneItem<T>(this IEnumerable<T> collection)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection.Count() == 1);
+            return ConditionResult<IEnumerable<T>>.Create(collection.Count() == 1, collection);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection has more than one item.</returns>
         public static ConditionResult<IEnumerable<T>> HasMoreThanOneItem<T>(this IEnumerable<T> collection)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection.Count() > 1);
+            return ConditionResult<IEnumerable<T>>.Create(collection.Count() > 1, collection);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection has at least one item.</returns>
         public static ConditionResult<IEnumerable<T>> HasAtLeastOneItem<T>(this IEnumerable<T> collection)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection.Count() >= 1);
+            return ConditionResult<IEnumerable<T>>.Create(collection.Count() >= 1, collection);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection has given number of items.</returns>
         public static ConditionResult<IEnumerable<T>> HasItemsCount<T>(this IEnumerable<T> collection, int count)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection.Count().Equals(count));
+            return ConditionResult<IEnumerable<T>>.Create(collection.Count().Equals(count), collection);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection has at least given number of items.</returns>
         public static ConditionResult<IEnumerable<T>> HasItemsCountAtLeast<T>(this IEnumerable<T> collection, int count)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection.Count() >= count);
+            return ConditionResult<IEnumerable<T>>.Create(collection.Count() >= count, collection);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if collection has more items than given number.</returns>
         public static ConditionResult<IEnumerable<T>> HasMoreItemsThan<T>(this IEnumerable<T> collection, int count)
         {
-            return ConditionResult<IEnumerable<T>>.Create(collection.Count() > count);
+            return ConditionResult<IEnumerable<T>>.Create(collection.Count() > count, collection);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if boolean value is true.</returns>
         public static ConditionResult<bool> IsTrue(this Boolean value)
         {
-            return ConditionResult<bool>.Create(value.Equals(true));
+            return ConditionResult<bool>.Create(value.Equals(true), value);
         }
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if boolean value is false.</returns>
         public static ConditionResult<bool> IsFalse(this Boolean value)
         {
-            return ConditionResult<bool>.Create(value.Equals(false));
+            return ConditionResult<bool>.Create(value.Equals(false), value);
         }
     }
 }

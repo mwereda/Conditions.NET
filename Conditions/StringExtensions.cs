@@ -12,7 +12,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if string is null or empty.</returns>
         public static ConditionResult<string> IsNullOrEmpty(this String @string)
         {
-            return ConditionResult<string>.Create(string.IsNullOrEmpty(@string));
+            return ConditionResult<string>.Create(string.IsNullOrEmpty(@string), @string);
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if string is not null or empty.</returns>
         public static ConditionResult<string> IsNotNullOrEmpty(this String @string)
         {
-            return ConditionResult<string>.Create(!IsNullOrEmpty(@string));
+            return ConditionResult<string>.Create(!IsNullOrEmpty(@string), @string);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Conditions
                 "^({)?[0xA-Fa-f0-9]{3,10}(, {0,1}[0xA-Fa-f0-9]{3,6}){2}, {0,1}({)([0xA-Fa-f0-9]{3,4}, {0,1}){7}[0xA-Fa-f0-9]{3,4}(}})$");
             var match = guidPattern.Match(@string);
 
-            return ConditionResult<string>.Create(match.Success);
+            return ConditionResult<string>.Create(match.Success, @string);
         }
 
         /// <summary>
@@ -49,11 +49,11 @@ namespace Conditions
             {
                 new MailAddress(@string);
 
-                return ConditionResult<string>.Create(true);
+                return ConditionResult<string>.Create(true, @string);
             }
             catch
             {
-                return ConditionResult<string>.Create(false);
+                return ConditionResult<string>.Create(false, @string);
             }
         }
 
@@ -64,7 +64,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if string has expected length.</returns>
         public static ConditionResult<string> HasLength(this String @string, int expectedLength)
         {
-            return ConditionResult<string>.Create(@string.Length.Equals(expectedLength));
+            return ConditionResult<string>.Create(@string.Length.Equals(expectedLength), @string);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if string has minimal length.</returns>
         public static ConditionResult<string> HasLengthAtLeast(this String @string, int minimalLength)
         {
-            return ConditionResult<string>.Create(@string.Length.IsGreaterOrEqual(minimalLength));
+            return ConditionResult<string>.Create(@string.Length.IsGreaterOrEqual(minimalLength), @string);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if string matches given pattern</returns>
         public static ConditionResult<string> Matches(this String @string, string pattern)
         {
-            return ConditionResult<string>.Create(Regex.IsMatch(@string, pattern));
+            return ConditionResult<string>.Create(Regex.IsMatch(@string, pattern), @string);
         }
     }
 }

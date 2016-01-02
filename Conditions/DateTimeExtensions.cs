@@ -11,7 +11,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if date time is greater than reference date time.</returns>
         public static ConditionResult<DateTime> IsGreaterThan(this DateTime dateTime, DateTime referenceDateTime)
         {
-            return ConditionResult<DateTime>.Create(dateTime > referenceDateTime);
+            return ConditionResult<DateTime>.Create(dateTime > referenceDateTime, dateTime);
         }
     }
 }

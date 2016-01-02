@@ -1,10 +1,15 @@
 ﻿namespace Conditions
 {
     public sealed class ConditionResult<T>
-    {    
-        public T And
+    {
+        private readonly And<T> andCondition;
+
+        public And<T> And
         {
-            get; private set;
+            get
+            {
+                return this.andCondition;
+            }
         }
 
         internal bool Result
@@ -12,19 +17,20 @@
             get; private set;
         }   
 
-        private ConditionResult(bool result)
+        private ConditionResult(bool result, T value)
         {
-            Result = result;            
+            Result = result;
+            this.andCondition = new And<T>(value, result); 
         }
         
-        internal static ConditionResult<T> Create(bool result)
+        internal static ConditionResult<T> Create(bool result, T value)
         {
-            return new ConditionResult<T>(result);
+            return new ConditionResult<T>(result, value);
         }
 
         public static implicit operator bool(ConditionResult<T> conditionResult)
         {
             return conditionResult.Result;
         }
-    }
+    }    
 }

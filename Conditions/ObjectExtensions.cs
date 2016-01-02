@@ -10,7 +10,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if object is null.</returns>
         public static ConditionResult<object> IsNull(this Object @object)
         {
-            return ConditionResult<object>.Create(@object == null);
+            return ConditionResult<object>.Create(@object == null, @object);
         }
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace Conditions
         /// <returns>Boolean value indicating if object is not null.</returns>
         public static ConditionResult<object> IsNotNull(this Object @object)
         {
-            return ConditionResult<object>.Create(!IsNull(@object));
+            return ConditionResult<object>.Create(!IsNull(@object), @object);
         }
     }
 }

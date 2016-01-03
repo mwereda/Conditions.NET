@@ -1,4 +1,6 @@
-﻿namespace Conditions
+﻿using System;
+
+namespace Conditions
 {
     public sealed class Or<T> : ComplexCondition<T>
     {
@@ -6,9 +8,11 @@
         {
         }
 
-        internal override bool CalculateResult(bool externalResult)
+        internal override bool CalculateResult(Func<T, bool> calculate)
         {
-            return CurrentResult || externalResult;
+            bool externalResult = calculate(Value);
+
+            return this.currentResult || externalResult;
         }
     }
 }

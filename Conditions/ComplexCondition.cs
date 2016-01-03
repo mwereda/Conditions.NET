@@ -1,9 +1,11 @@
-﻿namespace Conditions
+﻿using System;
+
+namespace Conditions
 {
     public abstract class ComplexCondition<T>
     {
+        protected readonly bool currentResult;
         private readonly T value;
-        private readonly bool currentResult;
 
         internal T Value
         {
@@ -13,20 +15,12 @@
             }
         }
 
-        internal bool CurrentResult
-        {
-            get
-            {
-                return this.currentResult;
-            }
-        }
-
         protected ComplexCondition(T value, bool currentResult)
         {
             this.value = value;
             this.currentResult = currentResult;
         }
 
-        internal abstract bool CalculateResult(bool externalResult);
+        internal abstract bool CalculateResult(Func<T, bool> calculate);
     }
 }

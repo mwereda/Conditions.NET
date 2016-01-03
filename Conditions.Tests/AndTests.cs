@@ -10,7 +10,7 @@ namespace Conditions.Tests
         {
             var and = new And<int>(2, true);
 
-            and.CalculateResult(true).ShouldBe(true);
+            and.CalculateResult(x => true).ShouldBe(true);
         }
 
         [Fact]
@@ -18,7 +18,7 @@ namespace Conditions.Tests
         {
             var and = new And<int>(2, true);
 
-            and.CalculateResult(false).ShouldBe(false);
+            and.CalculateResult(x => false).ShouldBe(false);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace Conditions.Tests
         {
             var and = new And<int>(2, false);
 
-            and.CalculateResult(false).ShouldBe(false);
+            and.CalculateResult(x => false).ShouldBe(false);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Conditions.Tests
         {
             var and = new And<int>(2, false);
 
-            and.CalculateResult(true).ShouldBe(false);
+            and.CalculateResult(x => true).ShouldBe(false);
         }
     }
 }

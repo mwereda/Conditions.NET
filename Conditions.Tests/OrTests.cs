@@ -10,7 +10,7 @@ namespace Conditions.Tests
         {
             var or = new Or<int>(2, true);
 
-            or.CalculateResult(true).ShouldBe(true);
+            or.CalculateResult(x => true).ShouldBe(true);
         }
 
         [Fact]
@@ -18,7 +18,7 @@ namespace Conditions.Tests
         {
             var or = new Or<int>(2, true);
 
-            or.CalculateResult(false).ShouldBe(true);
+            or.CalculateResult(x => false).ShouldBe(true);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace Conditions.Tests
         {
             var or = new Or<int>(2, false);
 
-            or.CalculateResult(false).ShouldBe(false);
+            or.CalculateResult(x => false).ShouldBe(false);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Conditions.Tests
         {
             var or = new Or<int>(2, false);
 
-            or.CalculateResult(true).ShouldBe(true);
+            or.CalculateResult(x => true).ShouldBe(true);
         }
     }
 }

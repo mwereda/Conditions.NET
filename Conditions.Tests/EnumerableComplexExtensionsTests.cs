@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Conditions.Tests
 {
-    public class EnumerableAndExtensionsTests
+    public class EnumerableComplexExtensionsTests
     {
         [Fact]
         public void IsEmpty_AndObjectWithTrueResultAndCollectionEmpty_ReturnsTrue()

@@ -23,12 +23,12 @@ namespace Conditions
         /// </summary>                
         /// <param name="givenValue">Value which variable should be greater than.</param>
         /// <returns>Boolean value indicating if variable is greater than given value.</returns>
-        public static ConditionResult<T> IsGreaterThan<T>(this And<T> andCondition, T givenValue) where T : struct, IComparable<T>
+        public static ConditionResult<T> IsGreaterThan<T>(this ComplexCondition<T> complexCondition, T givenValue) where T : struct, IComparable<T>
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsGreaterThan(givenValue);
 
-            return ConditionResult<T>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<T>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -48,12 +48,12 @@ namespace Conditions
         /// </summary>                
         /// <param name="givenValue">Value which variable should be greater than or equal to.</param>
         /// <returns>Boolean value indicating if variable is greater than or equal given value.</returns>
-        public static ConditionResult<T> IsGreaterOrEqual<T>(this And<T> andCondition, T givenValue) where T : struct, IComparable<T>
+        public static ConditionResult<T> IsGreaterOrEqual<T>(this ComplexCondition<T> complexCondition, T givenValue) where T : struct, IComparable<T>
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsGreaterOrEqual(givenValue);
 
-            return ConditionResult<T>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<T>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -71,12 +71,12 @@ namespace Conditions
         /// </summary>                
         /// <param name="givenValue">Value which variable should be lower than.</param>
         /// <returns>Boolean value indicating if variable is lower than given value.</returns>        
-        public static ConditionResult<T> IsLowerThan<T>(this And<T> andCondition, T givenValue) where T : struct, IComparable<T>
+        public static ConditionResult<T> IsLowerThan<T>(this ComplexCondition<T> complexCondition, T givenValue) where T : struct, IComparable<T>
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsLowerThan(givenValue);
 
-            return ConditionResult<T>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<T>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -96,12 +96,12 @@ namespace Conditions
         /// </summary>                
         /// <param name="givenValue">Value which variable should be lower than or equal to.</param>
         /// <returns>Boolean value indicating if variable is lower than or equal given value.</returns>
-        public static ConditionResult<T> IsLowerOrEqual<T>(this And<T> andCondition, T givenValue) where T : struct, IComparable<T>
+        public static ConditionResult<T> IsLowerOrEqual<T>(this ComplexCondition<T> complexCondition, T givenValue) where T : struct, IComparable<T>
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsLowerOrEqual(givenValue);
 
-            return ConditionResult<T>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<T>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -123,12 +123,12 @@ namespace Conditions
         /// <param name="minValue">Minimal value.</param>
         /// <param name="maxValue">Maximal value.</param>
         /// <returns>Boolean value indicating if variable is between given range.</returns>
-        public static ConditionResult<T> IsBetween<T>(this And<T> andCondition, T minValue, T maxValue) where T : struct, IComparable<T>
+        public static ConditionResult<T> IsBetween<T>(this ComplexCondition<T> complexCondition, T minValue, T maxValue) where T : struct, IComparable<T>
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsBetween(minValue, maxValue);
 
-            return ConditionResult<T>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<T>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -146,12 +146,12 @@ namespace Conditions
         /// </summary>        
         /// <param name="value">Given value.</param>
         /// <returns>Boolean value indicating if variable is positive number.</returns>
-        public static ConditionResult<T> IsPositive<T>(this And<T> andCondition) where T : struct, IComparable<T>
+        public static ConditionResult<T> IsPositive<T>(this ComplexCondition<T> complexCondition) where T : struct, IComparable<T>
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsPositive();
 
-            return ConditionResult<T>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<T>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -169,12 +169,12 @@ namespace Conditions
         /// </summary>        
         /// <param name="value">Given value.</param>
         /// <returns>Boolean value whether variable is negative number.</returns>
-        public static ConditionResult<T> IsNegative<T>(this And<T> andCondition) where T : struct, IComparable<T>
+        public static ConditionResult<T> IsNegative<T>(this ComplexCondition<T> complexCondition) where T : struct, IComparable<T>
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsNegative();
 
-            return ConditionResult<T>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<T>.Create(complexCondition.CalculateResult(result), value);
         }
     }
 }

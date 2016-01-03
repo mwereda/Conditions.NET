@@ -1,30 +1,14 @@
 ﻿namespace Conditions
 {
-    public sealed class And<T>
+    public sealed class And<T> : ComplexCondition<T>
     {
-        private readonly T value;
-        private readonly bool currentResult;
-
-        internal T Value
+        internal And(T value, bool currentResult) : base(value, currentResult)
         {
-            get
-            {
-                return this.value;
-            }
         }
 
-        internal bool CurrentResult
+        internal override bool CalculateResult(bool externalResult)
         {
-            get
-            {
-                return this.currentResult;
-            }
+            return CurrentResult && externalResult;
         }
-
-        internal And(T value, bool currentResult)
-        {
-            this.value = value;
-            this.currentResult = currentResult;
-        }       
     }
 }

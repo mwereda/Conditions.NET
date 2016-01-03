@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Conditions.Tests
 {
-    public class NumericAndExtensionsTests
+    public class NumericComplexExtensionsTests
     {
         [Theory]
         [InlineData(4, true)]
@@ -132,7 +132,7 @@ namespace Conditions.Tests
         [InlineData(0, false)]
         public void IsPositive_AndObjectWithTrueResult_ReturnsExpectedResult(int givenValue, bool expectedResult)
         {
-            var andCondition = new And<int>(givenValue, true);
+            ComplexCondition<int> andCondition = new And<int>(givenValue, true);
             var result = andCondition.IsPositive();
 
             result.Result.ShouldBe(expectedResult);
@@ -145,7 +145,7 @@ namespace Conditions.Tests
         [InlineData(0)]
         public void IsPositive_AndObjectWithFalseResult_ReturnsExpectedResult(int givenValue)
         {
-            var andCondition = new And<int>(givenValue, false);
+            ComplexCondition<int> andCondition = new And<int>(givenValue, false);
             var result = andCondition.IsPositive();
 
             result.Result.ShouldBe(false);
@@ -158,7 +158,7 @@ namespace Conditions.Tests
         [InlineData(0, false)]
         public void IsNegative_AndObjectWithTrueResult_ReturnsExpectedResult(int givenValue, bool expectedResult)
         {
-            var andCondition = new And<int>(givenValue, true);
+            ComplexCondition<int> andCondition = new And<int>(givenValue, true);
             var result = andCondition.IsNegative();
 
             result.Result.ShouldBe(expectedResult);
@@ -171,7 +171,7 @@ namespace Conditions.Tests
         [InlineData(0)]
         public void IsNegative_AndObjectWithFalseResult_ReturnsExpectedResult(int givenValue)
         {
-            var andCondition = new And<int>(givenValue, false);
+            ComplexCondition<int> andCondition = new And<int>(givenValue, false);
             var result = andCondition.IsNegative();
 
             result.Result.ShouldBe(false);

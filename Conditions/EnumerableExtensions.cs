@@ -18,12 +18,12 @@ namespace Conditions
         /// Checks if collection (IEnumerable) is empty.
         /// </summary>        
         /// <returns>Boolean value indicating if collection is empty.</returns>
-        public static ConditionResult<IEnumerable<T>> IsEmpty<T>(this And<IEnumerable<T>> andCondition)
+        public static ConditionResult<IEnumerable<T>> IsEmpty<T>(this ComplexCondition<IEnumerable<T>> complexCondition)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsEmpty();
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -39,12 +39,12 @@ namespace Conditions
         /// Checks if collection (IEnumerable) is null or empty.
         /// </summary>        
         /// <returns>Boolean value indicating if collection is null or empty.</returns>
-        public static ConditionResult<IEnumerable<T>> IsNullOrEmpty<T>(this And<IEnumerable<T>> andCondition)
+        public static ConditionResult<IEnumerable<T>> IsNullOrEmpty<T>(this ComplexCondition<IEnumerable<T>> complexCondition)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsNullOrEmpty();
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -60,12 +60,12 @@ namespace Conditions
         /// Checks if collection (IEnumerable) is not null or empty.
         /// </summary>        
         /// <returns>Boolean value indicating if collection is not null or empty.</returns>
-        public static ConditionResult<IEnumerable<T>> IsNotNullOrEmpty<T>(this And<IEnumerable<T>> andCondition)
+        public static ConditionResult<IEnumerable<T>> IsNotNullOrEmpty<T>(this ComplexCondition<IEnumerable<T>> complexCondition)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.IsNotNullOrEmpty();
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -81,12 +81,12 @@ namespace Conditions
         /// Checks if collection (IEnumerable) has only one item.
         /// </summary>        
         /// <returns>Boolean value indicating if collection has only one item.</returns>
-        public static ConditionResult<IEnumerable<T>> HasExactlyOneItem<T>(this And<IEnumerable<T>> andCondition)
+        public static ConditionResult<IEnumerable<T>> HasExactlyOneItem<T>(this ComplexCondition<IEnumerable<T>> complexCondition)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.HasExactlyOneItem();
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -102,12 +102,12 @@ namespace Conditions
         /// Checks if collection (IEnumerable) has more than one item.
         /// </summary>        
         /// <returns>Boolean value indicating if collection has more than one item.</returns>
-        public static ConditionResult<IEnumerable<T>> HasMoreThanOneItem<T>(this And<IEnumerable<T>> andCondition)
+        public static ConditionResult<IEnumerable<T>> HasMoreThanOneItem<T>(this ComplexCondition<IEnumerable<T>> complexCondition)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.HasMoreThanOneItem();
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -123,12 +123,12 @@ namespace Conditions
         /// Checks if collection (IEnumerable) has at least one item.
         /// </summary>        
         /// <returns>Boolean value indicating if collection has at least one item.</returns>
-        public static ConditionResult<IEnumerable<T>> HasAtLeastOneItem<T>(this And<IEnumerable<T>> andCondition)
+        public static ConditionResult<IEnumerable<T>> HasAtLeastOneItem<T>(this ComplexCondition<IEnumerable<T>> complexCondition)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.HasAtLeastOneItem();
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -146,12 +146,12 @@ namespace Conditions
         /// </summary>        
         /// <param name="count">Items count.</param>
         /// <returns>Boolean value indicating if collection has given number of items.</returns>
-        public static ConditionResult<IEnumerable<T>> HasItemsCount<T>(this And<IEnumerable<T>> andCondition, int count)
+        public static ConditionResult<IEnumerable<T>> HasItemsCount<T>(this ComplexCondition<IEnumerable<T>> complexCondition, int count)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.HasItemsCount(count);
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -169,12 +169,12 @@ namespace Conditions
         /// </summary>        
         /// <param name="count">Items count.</param>
         /// <returns>Boolean value indicating if collection has at least given number of items.</returns>
-        public static ConditionResult<IEnumerable<T>> HasItemsCountAtLeast<T>(this And<IEnumerable<T>> andCondition, int count)
+        public static ConditionResult<IEnumerable<T>> HasItemsCountAtLeast<T>(this ComplexCondition<IEnumerable<T>> complexCondition, int count)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.HasItemsCountAtLeast(count);
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
 
         /// <summary>
@@ -192,12 +192,12 @@ namespace Conditions
         /// </summary>        
         /// <param name="count">Items count.</param>
         /// <returns>Boolean value indicating if collection has more items than given number.</returns>
-        public static ConditionResult<IEnumerable<T>> HasMoreItemsThan<T>(this And<IEnumerable<T>> andCondition, int count)
+        public static ConditionResult<IEnumerable<T>> HasMoreItemsThan<T>(this ComplexCondition<IEnumerable<T>> complexCondition, int count)
         {
-            var value = andCondition.Value;
+            var value = complexCondition.Value;
             var result = value.HasMoreItemsThan(count);
 
-            return ConditionResult<IEnumerable<T>>.Create(result && andCondition.CurrentResult, value);
+            return ConditionResult<IEnumerable<T>>.Create(complexCondition.CalculateResult(result), value);
         }
     }
 }

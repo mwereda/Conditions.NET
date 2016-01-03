@@ -61,15 +61,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AndTests.cs" />
     <Compile Include="BoolExtensionsTests.cs" />
     <Compile Include="ComplexConditionTests.cs" />
     <Compile Include="DateTimeExtensionsTests.cs" />
     <Compile Include="DummyClass.cs" />
-    <Compile Include="EnumerableAndExtensionsTests.cs" />
+    <Compile Include="EnumerableComplexExtensionsTests.cs" />
     <Compile Include="EnumerableExtensionsTests.cs" />
-    <Compile Include="NumericAndExtensionsTests.cs" />
+    <Compile Include="NumericComplexExtensionsTests.cs" />
     <Compile Include="NumericExtensionsTests.cs" />
     <Compile Include="ObjectExtensionsTests.cs" />
+    <Compile Include="OrTests.cs" />
+    <Compile Include="StringComplexExtensionsTests.cs" />
     <Compile Include="StringExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

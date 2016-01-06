@@ -29,6 +29,8 @@ Numerics:
   IsLowerThan
   IsLowerOrEqual
   IsBetween
+  IsPositive
+  IsNegative
   ```
 DateTime:
   ```
@@ -51,6 +53,27 @@ Enumerables:
   IsNullOrEmpty
   IsNotNullOrEmpty
   ```
+
+**Complex conditions (from v2.0):**
+It is possible to create more complex conditions using ```And``` and ```Or``` operators. Both operators are available for every simple conditions.
+
+Examples:
+```
+  int value = 2;
+  if (value.IsPositive().And.IsGreaterThan(0))
+  {
+    ...
+  }
+```
+
+```
+  string value = "Hi!";
+  if (value.IsNotNullOrEmpty().Or.IsGuid())
+  {
+    ...
+  }
+```
+
 NuGet: https://www.nuget.org/packages/Conditions.NET
 
 # Guards.NET
